@@ -513,7 +513,7 @@
           if (data.position) {
             try { localStorage.setItem('bl_signup_position', String(data.position)); } catch (e) {}
           }
-          applySuccessState();
+          window.location.href = '/confirmed.html?p=' + (data.position || getPosition());
         })
         .catch(function (err) {
           spinner.remove();

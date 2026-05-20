@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>You're on the list — BlueLetter</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" href="tokens.css"/>
+<link rel="stylesheet" href="landing.css"/>
+<style>
+  .confirmed-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--canvas-soft);
+  }
+  .confirmed-hero {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 96px 32px;
+    overflow: hidden;
+  }
+  .confirmed-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-mesh);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .confirmed-content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+  .confirmed-check {
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    background: var(--success-deep);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 32px;
+  }
+  .confirmed-content h1 {
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -2.2px;
+    line-height: 1.05;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .confirmed-content .lede {
+    font-size: 18px;
+    color: var(--body);
+    line-height: 1.5;
+    margin: 0 0 32px;
+  }
+  .confirmed-position {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: var(--elev-2);
+  }
+  .confirmed-position .num {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1.1px;
+    color: var(--ink);
+  }
+  .confirmed-position .label {
+    font-size: 13px;
+    color: var(--mute);
+    text-align: left;
+    line-height: 1.3;
+  }
+  .confirmed-next {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+    box-shadow: var(--elev-1);
+  }
+  .confirmed-next-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--mute);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .confirmed-next ol {
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-size: 15px;
+    color: var(--body);
+    line-height: 1.6;
+  }
+  .confirmed-next ol li + li {
+    margin-top: 8px;
+  }
+  .confirmed-next ol strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .confirmed-footer {
+    padding: 24px 32px;
+    text-align: center;
+    border-top: 1px solid var(--hairline);
+  }
+  .confirmed-footer a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .confirmed-hero { padding: 64px 20px; }
+    .confirmed-content h1 { font-size: 32px; letter-spacing: -1.28px; }
+    .confirmed-content .lede { font-size: 16px; }
+    .confirmed-position .num { font-size: 24px; }
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     TRACKING PIXELS — place your conversion pixels here.
+     This page only loads after a confirmed signup, so any pixel
+     that fires here = one verified lead.
+
+     Examples:
+     Meta/Facebook: <script>fbq('track', 'Lead');</script>
+     Google Ads:    <script>gtag('event', 'conversion', { send_to: 'AW-XXXXX/XXXXX' });</script>
+     TikTok:        <script>ttq.track('SubmitForm');</script>
+     ═══════════════════════════════════════════════════════════════════ -->
+
+</head>
+<body>
+
+<div class="confirmed-page">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="/" aria-label="BlueLetter home">
+          <img src="assets/wordmark.svg" alt="BlueLetter" class="brand-wordmark"/>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONFIRMATION -->
+  <div class="confirmed-hero">
+    <div class="confirmed-content">
+      <div class="confirmed-check">&#10003;</div>
+      <h1>You're on the list.</h1>
+      <p class="lede">We'll email you the moment BlueLetter is ready. Early-access members get the annual price locked at &euro;29 for life.</p>
+
+      <div class="confirmed-position" id="position-card" style="display:none;">
+        <div class="num">#<span id="position-num"></span></div>
+        <div class="label">Your position<br>on the waitlist</div>
+      </div>
+
+      <div class="confirmed-next">
+        <div class="confirmed-next-title">What happens next</div>
+        <ol>
+          <li><strong>July 2026</strong> — Closed TestFlight beta opens for the first 500 on the waitlist.</li>
+          <li><strong>September 2026</strong> — Public iOS launch. You'll get an email with a download link.</li>
+          <li><strong>Meanwhile</strong> — Keep your Dutch letters. You'll scan them all on day one.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="confirmed-footer">
+    <a href="/">&larr; Back to blueletter.app</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var pos = params.get('p');
+  if (pos) {
+    document.getElementById('position-num').textContent = parseInt(pos, 10).toLocaleString();
+    document.getElementById('position-card').style.display = 'inline-flex';
+  }
+})();
+</script>
+
+</body>
+</html>
