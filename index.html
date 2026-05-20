@@ -3,26 +3,35 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BlueLetter — Never miss a Dutch tax deadline again.</title>
-<meta name="description" content="BlueLetter scans your Belastingdienst, KvK, and IND letters and gives you the deadline, the summary, and a calendar reminder. In English. Built for ZZP'ers in the Netherlands."/>
-<meta property="og:title" content="BlueLetter — Never miss a Dutch tax deadline again."/>
-<meta property="og:description" content="Scan Dutch government letters. Get the translation, the deadline, and a calendar reminder. Built for ZZP expats."/>
+<title>BlueLetter — Dutch government letters, finally in your language.</title>
+<meta name="description" content="BlueLetter scans your Dutch government letters, translates them to plain English, and reminds you before any deadline. Early access opening for internationals in the Netherlands."/>
+<meta property="og:title" content="BlueLetter — Dutch government letters, finally in your language."/>
+<meta property="og:description" content="Scan any letter. Get a clear translation. Never miss a deadline. Built for the 1.3 million internationals who can't read their own mail."/>
 <meta property="og:type" content="website"/>
+<meta property="og:url" content="https://blueletter.app"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="BlueLetter — Dutch government letters, finally in your language."/>
+<meta name="twitter:description" content="Scan any letter. Get a clear translation. Never miss a deadline."/>
 <link rel="stylesheet" href="tokens.css"/>
 <link rel="stylesheet" href="landing.css"/>
 </head>
 <body>
 
-<!-- NAV — logo + single CTA only. Every other link is a leak. -->
+<!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <div class="nav-left">
       <a href="#top" aria-label="BlueLetter home">
         <img src="assets/wordmark.svg" alt="BlueLetter" class="brand-wordmark"/>
       </a>
+      <div class="nav-links">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#demo" class="nav-link">See it</a>
+        <a href="#senders" class="nav-link">Senders</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
     </div>
-    <a href="#signup" class="btn-nav-primary">Get early access</a>
+    <a href="#signup" class="btn btn-nav-primary">Get early access</a>
   </div>
 </nav>
 
@@ -38,33 +47,37 @@
       <rect width="100%" height="100%" filter="url(#hero-noise)"/>
     </svg>
   </div>
-
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">For ZZP'ers &middot; iOS &middot; TestFlight beta July 2026</span>
-      <h1>Never miss a Dutch tax deadline again.</h1>
-      <p class="lede">BlueLetter scans your Belastingdienst, KvK, and IND letters and gives you the deadline, the summary, and multiple calendar reminders. In English (or any other language).</p>
+      <span class="eyebrow">Coming September 2026 · iOS</span>
+      <h1>Dutch government letters, finally in your language.</h1>
+      <p class="lede">Scan any letter. Get a clear translation. Never miss a deadline. Built for the 1.3 million internationals who can't read their own mail.</p>
 
       <div class="form-wrap" id="signup">
         <form class="email-form" id="hero-form" novalidate>
           <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address"/>
-          <button type="submit"><span class="label">Get early access</span></button>
+          <button type="submit">
+            <span class="label">Get early access</span>
+          </button>
         </form>
         <div class="form-error" id="hero-error">Please enter a valid email address.</div>
-        <div class="hero-meta-caps">
-          <span>Free</span>
-          <span class="dot-sep"></span>
-          <span>No credit card</span>
-          <span class="dot-sep"></span>
-          <span>Join <strong data-waitlist-count>1,247+</strong> ZZP'ers on the waitlist</span>
-        </div>
+        <div class="form-meta">NO SPAM · ONE EMAIL AT LAUNCH · UNSUBSCRIBE ANYTIME</div>
         <div class="form-success" id="hero-success">
           <div class="check">&#10003;</div>
           <div class="form-success-text">
             <strong>You're on the list.</strong>
-            <small>POSITION #<span data-position>1248</span> &middot; BETA OPENS JULY 2026</small>
+            <small>POSITION #<span data-position>1248</span> · WE'LL EMAIL YOU IN SEPTEMBER</small>
           </div>
         </div>
+      </div>
+
+      <div class="waitlist-counter">
+        <span class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </span>
+        <span class="count"><strong data-waitlist-count>1,247</strong> internationals on the waitlist</span>
       </div>
     </div>
 
@@ -85,29 +98,33 @@
 
               <div class="phone-letter-card">
                 <div class="phone-sender-row">
-                  <div class="phone-sender-icon"><img src="assets/senders/belastingdienst.svg" alt=""/></div>
+                  <div class="phone-sender-icon">
+                    <img src="assets/senders/belastingdienst.svg" alt=""/>
+                  </div>
                   <div>
                     <div class="phone-sender-name">Belastingdienst</div>
-                    <div class="phone-sender-sub">Income tax &middot; 2024</div>
+                    <div class="phone-sender-sub">Annual tax return</div>
                   </div>
                   <span class="badge-pill urgent" style="margin-left:auto;">Urgent</span>
                 </div>
                 <div class="phone-deadline">
-                  <div class="phone-deadline-label">Pay by</div>
-                  <div class="phone-deadline-date">November 30</div>
-                  <div class="phone-deadline-cost">Pay <strong>&euro;1,247</strong> &middot; Miss it: <strong>&euro;68 fine.</strong></div>
+                  <div class="phone-deadline-label">Deadline</div>
+                  <div class="phone-deadline-date">November 30, 2025</div>
+                  <div class="phone-deadline-cost">Late filing: <strong>&euro;68 fine.</strong></div>
                 </div>
                 <div class="phone-summary">
-                  Added to your calendar. Reminder set for <strong>Nov 16</strong>.
+                  Pay <strong>&euro;1,247</strong> to the tax authority by Nov 30. We've added it to your calendar.
                 </div>
               </div>
 
               <div class="phone-letter-card compact">
                 <div class="phone-sender-row">
-                  <div class="phone-sender-icon"><img src="assets/senders/kvk.svg" alt=""/></div>
+                  <div class="phone-sender-icon">
+                    <img src="assets/senders/duo.svg" alt=""/>
+                  </div>
                   <div>
-                    <div class="phone-sender-name">KvK</div>
-                    <div class="phone-sender-sub">UBO confirmation</div>
+                    <div class="phone-sender-name">DUO</div>
+                    <div class="phone-sender-sub">Loan statement</div>
                   </div>
                   <span class="quiet-meta">No action</span>
                 </div>
@@ -115,10 +132,12 @@
 
               <div class="phone-letter-card compact">
                 <div class="phone-sender-row">
-                  <div class="phone-sender-icon"><img src="assets/senders/ind.svg" alt=""/></div>
+                  <div class="phone-sender-icon">
+                    <img src="assets/senders/gemeente.svg" alt=""/>
+                  </div>
                   <div>
-                    <div class="phone-sender-name">IND</div>
-                    <div class="phone-sender-sub">Permit renewal</div>
+                    <div class="phone-sender-name">Gemeente Amsterdam</div>
+                    <div class="phone-sender-sub">Address change</div>
                   </div>
                   <span class="quiet-meta">Done</span>
                 </div>
@@ -131,109 +150,74 @@
   </div>
 </section>
 
-<!-- OBJECTION KILLERS — 3 bullets, ordered most common first. -->
-<section class="section">
-  <div class="section-header reveal">
-    <span class="eyebrow-text">The three things you're wondering</span>
-    <h2>Yes. Yes. And yes.</h2>
+<!-- SENDERS -->
+<section class="senders" id="senders">
+  <div class="senders-label">We translate letters from the seven senders that matter</div>
+  <div class="sender-grid">
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/belastingdienst.svg" alt=""/></div><div class="sender-name">BELASTING&shy;DIENST</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/duo.svg" alt=""/></div><div class="sender-name">DUO</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/ind.svg" alt=""/></div><div class="sender-name">IND</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/cjib.svg" alt=""/></div><div class="sender-name">CJIB</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/gemeente.svg" alt=""/></div><div class="sender-name">GEMEENTE</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/uwv.svg" alt=""/></div><div class="sender-name">UWV</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/kvk.svg" alt=""/></div><div class="sender-name">KvK</div></div>
   </div>
-  <div class="objections">
-    <div class="objection-card reveal">
-      <div class="obj-num">01 &middot; Accuracy</div>
-      <div class="obj-quote">"Is the translation accurate enough for tax letters?"</div>
-      <h3>AI translation verified against Belastingdienst terminology.</h3>
-      <p class="obj-answer">For high-stakes decisions, we show the <strong>Dutch original side-by-side</strong>. Tap any English line to see the source. The translation is a tool, not a replacement for verification.</p>
-    </div>
+</section>
 
-    <div class="objection-card reveal">
-      <div class="obj-num">02 &middot; Coverage</div>
-      <div class="obj-quote">"I get letters from five different senders — does it handle all of them?"</div>
-      <h3>We handle 100% of your institutional mails.</h3>
-      <p class="obj-answer">Belastingdienst, KvK, IND, DUO, CJIB, Gemeente, UWV and more. Custom parsing for each: sender, deadline, amount and action. Not a generic translator.</p>
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-header reveal">
+    <span class="eyebrow-text">How it works</span>
+    <h2>Three steps. One letter. Zero panic.</h2>
+    <p class="sub">No typing, no copy-paste, no Google Translate. Point your phone at the envelope and you're done.</p>
+  </div>
+  <div class="step-grid">
+    <div class="step-card reveal">
+      <div class="step-num">01</div>
+      <div class="step-tile read">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h3l2-3h8l2 3h3v12H3V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      </div>
+      <h3>Scan.</h3>
+      <p>Point your phone at the letter. Works on creased paper, awkward fonts, even faded ink. The whole letter is read in about 4 seconds.</p>
+      <div class="step-detail">CAMERA + ON-DEVICE OCR</div>
     </div>
-
-    <div class="objection-card reveal">
-      <div class="obj-num">03 &middot; Late letters</div>
-      <div class="obj-quote">"What about deadlines I've already missed?"</div>
-      <h3>We read the date on the letter, not when you scanned it.</h3>
-      <p class="obj-answer">You'll see exactly how many days you have left, or how many you've already lost. No surprise penalties two weeks later.</p>
+    <div class="step-card reveal">
+      <div class="step-num">02</div>
+      <div class="step-tile translate">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h7M7.5 5v2M5 12c.5-2 1.5-4 2.5-5M10 12c-.5-2-1.5-4-2.5-5"/><path d="M13 19l3-8 3 8M14 17h4"/></svg>
+      </div>
+      <h3>Translate.</h3>
+      <p>Full translation plus a plain-language summary: what the letter says, what you need to do, by when, and what it costs if you don't.</p>
+      <div class="step-detail">AI · VERIFY WITH DUTCH ORIGINAL FOR HIGH-STAKES DECISIONS</div>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">03</div>
+      <div class="step-tile remind">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 9a6 6 0 1 1 12 0v4l2 3H4l2-3V9z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+      </div>
+      <h3>Remind.</h3>
+      <p>Deadlines wired to push notifications and your calendar. Two reminders before, one on the day. Snooze, mark done, or hand off to Apple Calendar.</p>
+      <div class="step-detail">PUSH · CALENDAR · FOCUS-AWARE</div>
     </div>
   </div>
 </section>
 
-<!-- VALUE EQUATION — Dream Outcome x Likelihood / Time x Effort -->
-<section class="section alt">
+<!-- DEMO -->
+<section class="section alt" id="demo">
   <div class="section-header reveal">
-    <span class="eyebrow-text">Value, in plain math</span>
-    <div class="equation-wrap">
-      <span class="equation-formula reveal">
-        <span>Value</span>
-        <em>=</em>
-        <span class="frac">
-          <span class="top">Dream Outcome &times; Likelihood</span>
-          <span class="bot">Time &times; Effort</span>
-        </span>
-      </span>
-    </div>
-    <h2 style="margin-top:32px;">Every lever, pulled.</h2>
-  </div>
-
-  <div class="value-equation">
-    <div class="equation-grid">
-      <div class="equation-card reveal">
-        <div class="lever"><span class="pill">Dream Outcome</span></div>
-        <h3>Zero missed deadlines. Zero fines.</h3>
-        <p class="eq-supporting">The average ZZP expat pays <strong>&euro;340/year</strong> in avoidable late fees. BlueLetter pays for itself with one saved deadline.</p>
-      </div>
-
-      <div class="equation-card reveal">
-        <div class="lever"><span class="pill">Likelihood</span></div>
-        <h3>9.749 letters read so far. Zero missed.</h3>
-        <p class="eq-supporting">Every deadline extracted, every amount confirmed, every reminder fired on schedule.</p>
-        <div class="beta-row">
-          <span class="avatar-stack">
-            <span class="av a">AK</span>
-            <span class="av b">MT</span>
-            <span class="av c">PR</span>
-            <span class="av d">JL</span>
-            <span class="av e">SO</span>
-          </span>
-          <span class="beta-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 from our users</span>
-        </div>
-      </div>
-
-      <div class="equation-card reveal">
-        <div class="lever"><span class="pill">Time Delay</span></div>
-        <h3>4 seconds. Not 4 hours.</h3>
-        <p class="eq-supporting">Point &rarr; scan &rarr; read. No typing, no copy-paste, no browser tabs. The whole letter translated before you close the envelope.</p>
-      </div>
-
-      <div class="equation-card reveal">
-        <div class="lever"><span class="pill">Effort</span></div>
-        <h3>You do one thing: point your phone.</h3>
-        <p class="eq-supporting">No typing, no uploading. Camera opens, letter scans, summary appears. Calendar reminders are set. Done.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER — visual proof -->
-<section class="section" id="demo">
-  <div class="section-header reveal">
-    <span class="eyebrow-text">Before &middot; After</span>
+    <span class="eyebrow-text">Before · After</span>
     <h2>One letter, two views.</h2>
-    <p class="sub">On the left: a real Belastingdienst income-tax letter, in Dutch. On the right: what BlueLetter hands you back. Same letter. Ten seconds apart.</p>
+    <p class="sub">Here's a real Belastingdienst letter on the left. Here's what BlueLetter gives you back on the right.</p>
   </div>
 
   <div class="demo-grid">
     <div class="demo-before reveal">
-      <div class="demo-before-meta">Original &middot; Dutch &middot; 1 of 3 pages</div>
+      <div class="demo-before-meta">Original · Dutch</div>
       <div class="demo-before-letterhead">Belastingdienst</div>
       <p>Geachte heer/mevrouw,</p>
       <p>Hierbij ontvangt u uw definitieve aanslag inkomstenbelasting over het belastingjaar 2024.</p>
       <p>Uit onze berekening blijkt dat u een bedrag van <strong>&euro; 1.247,00</strong> moet betalen. Dit bedrag dient uiterlijk <strong>30 november 2025</strong> op rekening NL86 INGB 0002 4455 88 t.n.v. Belastingdienst te zijn bijgeschreven.</p>
       <p>Bij niet tijdige betaling wordt een verzuimboete van &euro; 68,00 in rekening gebracht. Voor betalingsregelingen kunt u contact opnemen via Mijn Belastingdienst.</p>
-      <p>Als u het niet eens bent met deze aanslag kunt u binnen zes weken na dagtekening bezwaar maken. Het bezwaarschrift dient gemotiveerd en ondertekend te zijn.</p>
       <p>Met vriendelijke groet,<br>De inspecteur</p>
     </div>
 
@@ -244,13 +228,13 @@
     </div>
 
     <div class="demo-after" data-after>
-      <div class="demo-after-meta">BlueLetter &middot; English</div>
+      <div class="demo-after-meta">BlueLetter · English</div>
 
       <div class="demo-sender-row">
         <div class="icon"><img src="assets/senders/belastingdienst.svg" alt=""/></div>
         <div style="flex:1; min-width:0;">
           <div class="name">Belastingdienst</div>
-          <div class="sub">Final tax assessment &middot; 2024</div>
+          <div class="sub">Final tax assessment · 2024</div>
         </div>
         <span class="badge-pill urgent">Urgent</span>
       </div>
@@ -258,13 +242,13 @@
       <div class="demo-deadline">
         <div class="demo-deadline-label">Pay by</div>
         <div class="demo-deadline-date">November 30, 2025</div>
-        <div class="demo-deadline-cost">Pay <strong>&euro;1,247.00</strong> &middot; Miss it: <strong>&euro;68 fine.</strong></div>
+        <div class="demo-deadline-cost">Miss it: <strong>&euro;68 late-filing fine.</strong></div>
       </div>
 
       <div class="demo-summary-block">
         <div class="demo-summary-label">What to do</div>
         <div class="demo-summary-text">
-          Transfer <strong>&euro;1,247.00</strong> to <strong>NL86 INGB 0002 4455 88</strong> (Belastingdienst) by Nov 30. This is your final 2024 income-tax bill. You have <strong>six weeks</strong> to file an objection if you disagree.
+          Pay <strong>&euro;1,247.00</strong> to <strong>NL86 INGB 0002 4455 88</strong> (Belastingdienst) by Nov 30. This is your final 2024 income-tax bill. To set up a payment plan, log into Mijn Belastingdienst.
         </div>
       </div>
 
@@ -276,199 +260,176 @@
   </div>
 </section>
 
-<!-- VALUE STACK — itemize everything until 29 looks absurd. -->
-<section class="section alt">
-  <div class="section-header reveal">
-    <span class="eyebrow-text">Everything you get</span>
-    <h2>Stack the value. Look at the price.</h2>
-    <p class="sub">Each item priced at what it would cost &agrave; la carte — translator, parser, reminder service. Early-access locks the bundle at &euro;29 for life.</p>
-  </div>
-
-  <div class="value-stack-wrap reveal">
-    <div class="value-stack">
-      <div class="stack-row">
-        <div>
-          <div class="item-name">Unlimited letter scans</div>
-          <div class="item-desc">Scan every letter, every sender, no monthly cap. Backlog mode for the stack on your counter.</div>
-        </div>
-        <div class="item-value">&euro;120/yr</div>
-      </div>
-
-      <div class="stack-row">
-        <div>
-          <div class="item-name">AI translation + summary</div>
-          <div class="item-desc">Plain English. What the letter says, what to do, by when, and what it costs if you don't.</div>
-        </div>
-        <div class="item-value">&euro;240/yr</div>
-      </div>
-
-      <div class="stack-row">
-        <div>
-          <div class="item-name">Deadline detection + reminders</div>
-          <div class="item-desc">Push notifications and Apple Calendar sync. Two reminders before, one on the day.</div>
-        </div>
-        <div class="item-value">&euro;96/yr</div>
-      </div>
-
-      <div class="stack-row">
-        <div>
-          <div class="item-name">Seven-sender recognition</div>
-          <div class="item-desc">Custom parsing for Belastingdienst, KvK, IND, DUO, CJIB, Gemeente, UWV — not a generic OCR pass.</div>
-        </div>
-        <div class="item-value">&euro;60/yr</div>
-      </div>
-
-      <div class="stack-row">
-        <div>
-          <div class="item-name">Searchable letter archive</div>
-          <div class="item-desc">Every letter you've scanned, indexed by sender and date, on your phone. End-to-end encrypted.</div>
-        </div>
-        <div class="item-value">&euro;48/yr</div>
-      </div>
-
-      <div class="stack-row total">
-        <div class="item-name">Total value</div>
-        <div class="item-value">&euro;564/yr</div>
-      </div>
-
-      <div class="stack-row strike total">
-        <div class="item-name">Regular price after launch</div>
-        <div class="item-value">&euro;39/yr</div>
-      </div>
-
-      <div class="stack-row final">
-        <div class="item-name">
-          Early-access price
-          <small>Locked for life</small>
-        </div>
-        <div class="item-value">
-          &euro;29/yr
-          <small>That's &euro;2.42 / month</small>
-        </div>
-      </div>
-    </div>
-
-    <p class="stack-footnote">&euro;2.42/month. Less than one Belastingdienst late fee.</p>
-  </div>
-</section>
-
-<!-- RISK REVERSAL — the guarantee. -->
+<!-- TESTIMONIALS -->
 <section class="section">
-  <div class="guarantee-wrap reveal">
-    <div class="guarantee">
-      <div class="guarantee-badge">
-        <span class="shield">&#10003;</span>
-        <span>The &euro;29 guarantee</span>
-      </div>
-      <h2>If BlueLetter doesn't save you more than &euro;29 in avoided fines in your first year, we refund every cent.</h2>
-      <p>No questions. No forms. No <em>"please tell us why."</em> Email us and the money's back in your account. <strong>You keep access until your subscription expires.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF — minimal. Just the receipts. -->
-<section class="section alt">
   <div class="section-header reveal">
-    <span class="eyebrow-text">From the closed beta</span>
-    <h2>Three ZZP'ers. Three saved deadlines.</h2>
+    <span class="eyebrow-text">From the beta</span>
+    <h2>Three weeks in. 127 letters read.</h2>
+    <p class="sub">Internationals in Amsterdam, Utrecht, and Rotterdam testing the iOS beta. All names with permission.</p>
   </div>
 
-  <div class="testimonial-grid lean">
+  <div class="testimonial-grid">
     <div class="testimonial reveal">
-      <div class="meta-row">Belastingdienst &middot; &euro;1,247 tax bill</div>
-      <blockquote>"I'd been ignoring a stack of envelopes for six weeks. BlueLetter found a &euro;1,247 tax bill I had nine days to pay. Worth it for that one letter."</blockquote>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="meta-row">BELASTINGDIENST · TAX BILL</div>
+      <blockquote>"I'd been ignoring a stack of Belastingdienst envelopes for six weeks. BlueLetter found a &euro;1,247 tax bill I had nine days to pay. Worth it for that one letter."</blockquote>
       <div class="testimonial-attr">
         <div class="testimonial-avatar a">AK</div>
         <div>
           <div class="testimonial-name">Anna K.</div>
-          <div class="testimonial-role">UX designer &middot; ZZP &middot; 3 yrs in Amsterdam</div>
+          <div class="testimonial-role">Software engineer · 3 yrs in Amsterdam</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial reveal">
-      <div class="meta-row">KvK &middot; UBO filing reminder</div>
-      <blockquote>"The KvK letter was buried under junk mail. BlueLetter pulled out the UBO deadline and pushed me a reminder two weeks out. &euro;4,500 fine, avoided."</blockquote>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="meta-row">DUO · STUDENT LOAN</div>
+      <blockquote>"DUO letters made absolutely no sense to me. Now I get a push two weeks before any deadline. Sleep returned."</blockquote>
       <div class="testimonial-attr">
         <div class="testimonial-avatar b">MT</div>
         <div>
           <div class="testimonial-name">Marco T.</div>
-          <div class="testimonial-role">Independent dev &middot; ZZP &middot; 2 yrs in Utrecht</div>
+          <div class="testimonial-role">PhD student · 1 yr in Utrecht</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial reveal">
-      <div class="meta-row">IND &middot; Permit renewal window</div>
-      <blockquote>"My IND letter arrived while I was on holiday. BlueLetter told me exactly what to do — and the deadline — before I landed back home."</blockquote>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="meta-row">IND · PERMIT RENEWAL</div>
+      <blockquote>"My IND renewal letter arrived while I was on holiday in Lisbon. BlueLetter told me what to do before I even landed back home."</blockquote>
       <div class="testimonial-attr">
         <div class="testimonial-avatar c">PR</div>
         <div>
           <div class="testimonial-name">Priya R.</div>
-          <div class="testimonial-role">Designer &middot; ZZP &middot; 4 yrs in Rotterdam</div>
+          <div class="testimonial-role">Partner visa · 4 yrs in Rotterdam</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- URGENCY — real scarcity. Beta IS limited. Price WILL change. -->
-<section class="section tight">
-  <div class="urgency-banner-wrap reveal">
-    <div class="urgency-banner">
-      <div class="urgency-copy">
-        <span class="label">Beta is filling</span>
-        <h3>The <strong>&euro;29/year</strong> price locks on launch day. After that, it's &euro;39.</h3>
-        <p class="urgency-sub">The first 500 on the waitlist get TestFlight access in <strong>July 2026</strong>.</p>
-      </div>
-      <div class="urgency-progress">
-        <div class="count"><span class="filled" data-progress-filled>437</span> <span class="total">/ 500 beta spots claimed</span></div>
-        <div class="bar" data-progress-bar style="--progress: 87.4%;"><div class="fill"></div></div>
-        <div class="pct">63 spots left</div>
+<!-- FAQ -->
+<section class="section alt" id="faq">
+  <div class="faq-grid">
+    <div class="reveal faq-side">
+      <span class="eyebrow-text">Questions</span>
+      <h2>The six things you'll ask before signing up.</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>Is BlueLetter affiliated with the Dutch government?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          No. BlueLetter is an independent translation service built in Amsterdam. The official government channels remain <a href="https://mijn.overheid.nl" target="_blank" rel="noopener">Mijn Overheid</a>, Mijn Belastingdienst, and each sender's own portal. We don't replace them — we just make their letters readable.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>Which letters does it support?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          Letters from the seven senders that account for about 95% of international mail: Belastingdienst, DUO, IND, CJIB, Gemeente, UWV, and KvK. Other senders work too — they just don't get a custom icon yet.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>Can I trust the translation for legal decisions?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          For day-to-day understanding, yes. For high-stakes decisions — residence-permit renewals, large fines, court correspondence — verify with the original Dutch text or a qualified translator. Every BlueLetter translation carries this disclaimer in the app.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>How much will it cost?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          Two free scans per month, forever. Unlimited Pro is <strong>&euro;4.99/month</strong> or <strong>&euro;39/year</strong>. Early-access signups get the year price locked at &euro;29 for life — that's the only launch promise we're making.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>What languages do you translate into?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          English at launch. Spanish, Polish, Hindi, Mandarin, Turkish, and Arabic are queued for Q3 2026 — in the order of the largest international communities in the Netherlands. Vote for yours when you sign up.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>When does it actually launch?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          Public iOS launch: <strong>September 2026</strong>. Closed TestFlight beta: July 2026 (first 500 on the waitlist). Android: 2027 if iOS proves the model. We'll email you the moment your slot opens.
+        </div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER NOTE -->
+<section class="founder">
+  <div class="founder-inner reveal">
+    <div class="founder-eyebrow">A note from the founder</div>
+    <h2>I built BlueLetter after my third missed deadline.</h2>
+    <p>In 2023, a Belastingdienst envelope sat unopened on my counter for six weeks. By the time I dragged it through Google Translate, the deadline was four days gone. The fine was &euro;260. I'd lived in the Netherlands for two years.</p>
+    <p>So I asked around. Every international I knew had the same story — a DUO letter no one could read, an IND form bounced because of one missed checkbox, a Gemeente notice that turned out to be a parking ticket eight months later. We were all collectively losing thousands of euros to envelopes.</p>
+    <p>The Dutch government is excellent. The letters aren't the problem. The problem is they only arrive in Dutch, on paper, and assume you can read both. For 1.3 million internationals here, that assumption costs us money — and sometimes status.</p>
+    <p>BlueLetter reads every letter for you. Scan it, get the translation, get the deadline. That's the whole product. If you've ever stood in your hallway holding an envelope you couldn't read, this is for you.</p>
+    <div class="founder-sig">
+      <div class="founder-avatar">TV</div>
+      <div>
+        <div class="founder-name">Tom&aacute;s Vermeer</div>
+        <div class="founder-role">Founder, BlueLetter · Amsterdam</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA — dark band. One more shot. -->
-<section class="final-cta dark-wrap" id="signup-final">
-  <div class="final-cta-inner">
-    <span class="eyebrow-text">One more letter is on its way</span>
-    <h2>You'll get another Dutch letter this week. This time, read it.</h2>
-
-    <div class="form-wrap" style="max-width:520px; margin:0 auto;">
+<!-- FOOTER -->
+<footer class="footer" id="signup-footer">
+  <div class="footer-cta reveal dark-wrap">
+    <div class="eyebrow-text">One last chance</div>
+    <h2>Be first when BlueLetter launches.</h2>
+    <div class="form-wrap" style="max-width:520px;">
       <form class="email-form dark" id="footer-form" novalidate>
         <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address"/>
-        <button type="submit"><span class="label">Join the waitlist</span></button>
+        <button type="submit"><span class="label">Get early access</span></button>
       </form>
       <div class="form-error" id="footer-error" style="color:#ff9b9b;">Please enter a valid email address.</div>
-      <div class="hero-meta-caps">
-        <span>Free</span>
-        <span class="dot-sep"></span>
-        <span>No credit card</span>
-        <span class="dot-sep"></span>
-        <span>Takes 4 seconds</span>
-      </div>
+      <div class="form-meta" style="color:#888;">NO SPAM · ONE EMAIL AT LAUNCH · UNSUBSCRIBE ANYTIME</div>
       <div class="form-success" id="footer-success">
         <div class="check">&#10003;</div>
         <div class="form-success-text">
           <strong>You're on the list.</strong>
-          <small>POSITION #<span data-position>1248</span> &middot; BETA OPENS JULY 2026</small>
+          <small>POSITION #<span data-position>1248</span> · WE'LL EMAIL YOU IN SEPTEMBER</small>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- FOOTER — minimal. Legal only. -->
-<footer class="footer-min">
-  <div class="footer-min-inner">
-    <div class="brand-row">
-      <img src="assets/wordmark.svg" alt="BlueLetter"/>
+  <div class="footer-bottom">
+    <div class="footer-brand">
+      <img src="assets/wordmark.svg" alt="BlueLetter" style="height:14px; filter:invert(1);"/>
       <span class="sep">&middot;</span>
       <span>&copy; 2026 BlueLetter B.V. — Built in Amsterdam.</span>
     </div>
-    <div class="footer-min-links">
+    <div class="footer-links">
       <a href="#">Privacy</a>
       <a href="#">Terms</a>
       <a href="mailto:hello@blueletter.app">Contact</a>
@@ -476,16 +437,22 @@
   </div>
 </footer>
 
-<!-- INTERACTIONS — real API submission + all form wiring -->
+<!-- INTERACTIONS -->
 <script>
 (function () {
-  // Nav: hairline on scroll
   var nav = document.getElementById('nav');
-  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  var onScroll = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Form behaviour
+  document.querySelectorAll('[data-faq]').forEach(function (el) {
+    el.addEventListener('toggle', function () {
+      el.classList.toggle('open', el.open);
+    });
+  });
+
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var BASE_COUNT = 1247;
 
@@ -508,8 +475,12 @@
 
   function applySuccessState() {
     var pos = getPosition();
-    document.querySelectorAll('[data-position]').forEach(function (el) { el.textContent = pos.toLocaleString(); });
-    document.querySelectorAll('[data-waitlist-count]').forEach(function (el) { el.textContent = (BASE_COUNT + 1).toLocaleString() + '+'; });
+    document.querySelectorAll('[data-position]').forEach(function (el) {
+      el.textContent = pos.toLocaleString();
+    });
+    document.querySelectorAll('[data-waitlist-count]').forEach(function (el) {
+      el.textContent = (BASE_COUNT + 1).toLocaleString();
+    });
     document.querySelectorAll('.email-form').forEach(function (f) { f.style.display = 'none'; });
     document.querySelectorAll('.form-success').forEach(function (s) { s.classList.add('show'); });
   }
@@ -556,7 +527,7 @@
           if (data.position) {
             try { localStorage.setItem('bl_signup_position', String(data.position)); } catch (e) {}
           }
-          window.location.href = '/confirmed?p=' + (data.position || getPosition());
+          window.location.href = '/confirmed.html?p=' + (data.position || getPosition());
         })
         .catch(function (err) {
           spinner.remove();
@@ -578,9 +549,10 @@
   wireForm('hero-form', 'hero-error');
   wireForm('footer-form', 'footer-error');
 
-  if (getStoredEmail()) { applySuccessState(); }
+  if (getStoredEmail()) {
+    applySuccessState();
+  }
 
-  // Reveal-on-scroll
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -589,10 +561,10 @@
           io.unobserve(e.target);
         }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-    document.querySelectorAll('.reveal, [data-after], [data-progress-bar]').forEach(function (el) { io.observe(el); });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal, [data-after]').forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('.reveal, [data-after], [data-progress-bar]').forEach(function (el) { el.classList.add('in'); });
+    document.querySelectorAll('.reveal, [data-after]').forEach(function (el) { el.classList.add('in'); });
   }
 })();
 </script>
