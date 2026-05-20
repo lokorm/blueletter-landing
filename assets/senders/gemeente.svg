@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Gemeente">
+  
+  <path d="M3.5 20h17"></path>
+  <path d="M5 20V10"></path>
+  <path d="M19 20V10"></path>
+  <path d="m3 10 9-5.5L21 10"></path>
+  <path d="M9 20v-5h6v5"></path>
+  <path d="M9 11.5v2"></path>
+  <path d="M12 11.5v2"></path>
+  <path d="M15 11.5v2"></path>
+</svg>

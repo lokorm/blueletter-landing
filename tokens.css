@@ -1,0 +1,613 @@
+/* ============================================================
+   BlueLetter — colors_and_type.css
+   Drop into <head> as: <link rel="stylesheet" href="colors_and_type.css">
+   Every token is a CSS custom property. Semantic classes follow.
+   ============================================================ */
+
+/* --- Font loading: Geist + Geist Mono (Google Fonts, open-source) --- */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap');
+
+/* ============================================================
+   TOKENS — light mode (default)
+   ============================================================ */
+:root {
+  /* Surface ladder */
+  --canvas:           #ffffff;
+  --canvas-soft:      #fafafa;
+  --canvas-soft-2:    #f5f5f5;
+  --primary:          #171717;
+  --primary-hover:    #000000;
+  --on-primary:       #ffffff;
+
+  /* Text */
+  --ink:              #171717;
+  --body:             #4d4d4d;
+  --mute:             #888888;
+
+  /* Hairlines */
+  --hairline:         #ebebeb;
+  --hairline-strong:  #a1a1a1;
+
+  /* Semantic — urgent (red) */
+  --error:            #ee0000;
+  --error-soft:       #f7d4d6;
+  --error-deep:       #c50000;
+
+  /* Semantic — attention (amber) */
+  --warning:          #f5a623;
+  --warning-soft:     #ffefcf;
+  --warning-deep:     #ab570a;
+
+  /* Semantic — low priority / link (blue) */
+  --link:             #0070f3;
+  --link-bg-soft:     #d3e5ff;
+  --link-deep:        #0761d1;
+
+  /* Verified-sender — the single in-product green */
+  --success-deep:     #0d8019;
+
+  /* Mesh gradient pairs */
+  --gradient-read-start:       #0070f3;
+  --gradient-read-end:         #50e3c2;
+  --gradient-translate-start:  #7aa7ff;
+  --gradient-translate-end:    #f5e6d3;
+  --gradient-remind-start:     #ff9b3d;
+  --gradient-remind-end:       #f9cb28;
+
+  /* Composed gradients */
+  --gradient-read:      linear-gradient(135deg, var(--gradient-read-start) 0%, var(--gradient-read-end) 100%);
+  --gradient-translate: linear-gradient(135deg, var(--gradient-translate-start) 0%, var(--gradient-translate-end) 100%);
+  --gradient-remind:    linear-gradient(135deg, var(--gradient-remind-start) 0%, var(--gradient-remind-end) 100%);
+
+  /* The multi-stop mesh — one unified object, hero scale only */
+  --gradient-mesh: radial-gradient(at 12% 18%, #0070f3 0%, transparent 45%),
+                   radial-gradient(at 88% 14%, #50e3c2 0%, transparent 50%),
+                   radial-gradient(at 22% 92%, #7aa7ff 0%, transparent 55%),
+                   radial-gradient(at 78% 88%, #f5e6d3 0%, transparent 50%),
+                   radial-gradient(at 50% 50%, #ff9b3d 0%, transparent 40%),
+                   radial-gradient(at 95% 55%, #f9cb28 0%, transparent 45%),
+                   linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+
+  /* ============================================================
+     Spacing — 4px base
+     ============================================================ */
+  --space-xxs:  4px;
+  --space-xs:   8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+  --space-5xl: 96px;
+  --space-6xl: 128px;
+  --space-section: 192px;
+
+  /* ============================================================
+     Corner radii
+     ============================================================ */
+  --rounded-sm:    6px;
+  --rounded-md:    8px;
+  --rounded-lg:   12px;
+  --rounded-xl:   16px;
+  --rounded-pill: 100px;
+  --rounded-full: 9999px;
+
+  /* ============================================================
+     Elevation — stacked shadows + inset hairline ring
+     ============================================================ */
+  --elev-0: none;
+  --elev-1: inset 0 0 0 1px #00000014;
+  --elev-2: 0 1px 1px #00000005,
+            0 2px 2px #0000000a,
+            inset 0 0 0 1px #00000014;
+  --elev-3: 0 2px 2px #0000000a,
+            0 8px 8px -8px #0000000a,
+            inset 0 0 0 1px #00000014;
+  --elev-4: 0 2px 2px #0000000a,
+            0 8px 16px -4px #0000000a,
+            inset 0 0 0 1px #00000014;
+  --elev-5: 0 1px 1px #00000005,
+            0 8px 16px -4px #0000000a,
+            0 24px 32px -8px #0000000f,
+            inset 0 0 0 1px #00000014;
+
+  /* ============================================================
+     Typography — base
+     ============================================================ */
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'SF Pro', 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Display + body type tokens (size · weight · line-height · tracking) */
+  --display-xl-size:   48px; --display-xl-weight: 600; --display-xl-lh: 48px; --display-xl-tracking: -2.4px;
+  --display-lg-size:   32px; --display-lg-weight: 600; --display-lg-lh: 40px; --display-lg-tracking: -1.28px;
+  --display-md-size:   24px; --display-md-weight: 600; --display-md-lh: 32px; --display-md-tracking: -0.96px;
+  --display-sm-size:   20px; --display-sm-weight: 600; --display-sm-lh: 28px; --display-sm-tracking: -0.6px;
+
+  --body-lg-size:      18px; --body-lg-weight: 400; --body-lg-lh: 28px; --body-lg-tracking: 0;
+  --body-md-size:      16px; --body-md-weight: 400; --body-md-lh: 24px; --body-md-tracking: 0;
+  --body-md-strong-weight: 500;
+  --body-sm-size:      14px; --body-sm-weight: 400; --body-sm-lh: 20px; --body-sm-tracking: -0.28px;
+  --body-sm-strong-weight: 500;
+  --caption-size:      12px; --caption-weight: 400; --caption-lh: 16px;
+
+  --button-md-size:    14px; --button-md-weight: 500; --button-md-lh: 20px;
+  --button-lg-size:    16px; --button-lg-weight: 500; --button-lg-lh: 24px;
+
+  --code-size:         13px; --code-weight: 400; --code-lh: 20px;
+
+  /* Motion */
+  --ease:              cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:          150ms;
+  --dur-med:           200ms;
+  --dur-slow:          300ms;
+}
+
+/* ============================================================
+   TOKENS — dark mode polarity swap
+   The semantic urgency colours, verified-sender green, and
+   mesh gradient stops survive across modes unchanged.
+   ============================================================ */
+[data-theme="dark"], .theme-dark {
+  --canvas:           #0a0a0a;
+  --canvas-soft:      #111111;
+  --canvas-soft-2:    #1a1a1a;
+  --primary:          #fafafa;
+  --primary-hover:    #ffffff;
+  --on-primary:       #0a0a0a;
+
+  --ink:              #fafafa;
+  --body:             #a1a1a1;
+  --mute:             #666666;
+
+  --hairline:         #262626;
+  --hairline-strong:  #525252;
+
+  --elev-1: inset 0 0 0 1px #ffffff14;
+  --elev-2: 0 1px 1px #00000050,
+            0 2px 2px #00000060,
+            inset 0 0 0 1px #ffffff14;
+  --elev-3: 0 2px 2px #00000060,
+            0 8px 8px -8px #00000060,
+            inset 0 0 0 1px #ffffff14;
+  --elev-4: 0 2px 2px #00000060,
+            0 8px 16px -4px #00000060,
+            inset 0 0 0 1px #ffffff14;
+  --elev-5: 0 1px 1px #00000060,
+            0 8px 16px -4px #00000060,
+            0 24px 32px -8px #00000080,
+            inset 0 0 0 1px #ffffff14;
+}
+
+/* ============================================================
+   Base resets — applied to body when this stylesheet loads
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-lh);
+  color: var(--ink);
+  background: var(--canvas-soft);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "ss02";
+}
+
+/* ============================================================
+   Semantic type classes
+   ============================================================ */
+.t-display-xl, h1.display {
+  font-family: var(--font-sans);
+  font-size: var(--display-xl-size);
+  font-weight: var(--display-xl-weight);
+  line-height: var(--display-xl-lh);
+  letter-spacing: var(--display-xl-tracking);
+  color: var(--ink);
+}
+.t-display-lg, h1 {
+  font-family: var(--font-sans);
+  font-size: var(--display-lg-size);
+  font-weight: var(--display-lg-weight);
+  line-height: var(--display-lg-lh);
+  letter-spacing: var(--display-lg-tracking);
+  color: var(--ink);
+  margin: 0;
+}
+.t-display-md, h2 {
+  font-family: var(--font-sans);
+  font-size: var(--display-md-size);
+  font-weight: var(--display-md-weight);
+  line-height: var(--display-md-lh);
+  letter-spacing: var(--display-md-tracking);
+  color: var(--ink);
+  margin: 0;
+}
+.t-display-sm, h3 {
+  font-family: var(--font-sans);
+  font-size: var(--display-sm-size);
+  font-weight: var(--display-sm-weight);
+  line-height: var(--display-sm-lh);
+  letter-spacing: var(--display-sm-tracking);
+  color: var(--ink);
+  margin: 0;
+}
+.t-body-lg {
+  font-size: var(--body-lg-size);
+  font-weight: var(--body-lg-weight);
+  line-height: var(--body-lg-lh);
+  color: var(--body);
+}
+.t-body-md {
+  font-size: var(--body-md-size);
+  font-weight: var(--body-md-weight);
+  line-height: var(--body-md-lh);
+  color: var(--ink);
+}
+.t-body-md-strong {
+  font-size: var(--body-md-size);
+  font-weight: var(--body-md-strong-weight);
+  line-height: var(--body-md-lh);
+  color: var(--ink);
+}
+.t-body-sm {
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-weight);
+  line-height: var(--body-sm-lh);
+  letter-spacing: var(--body-sm-tracking);
+  color: var(--body);
+}
+.t-body-sm-strong {
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-strong-weight);
+  line-height: var(--body-sm-lh);
+  letter-spacing: var(--body-sm-tracking);
+  color: var(--ink);
+}
+.t-caption {
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  line-height: var(--caption-lh);
+  color: var(--mute);
+}
+.t-caption-mono {
+  font-family: var(--font-mono);
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  line-height: var(--caption-lh);
+  color: var(--body);
+  letter-spacing: 0;
+}
+.t-eyebrow {
+  /* Mono small-caps eyebrow — "TIP OF THE DAY", "BLUELETTER" */
+  font-family: var(--font-mono);
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  line-height: var(--caption-lh);
+  color: var(--body);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+}
+.t-code {
+  font-family: var(--font-mono);
+  font-size: var(--code-size);
+  font-weight: var(--code-weight);
+  line-height: var(--code-lh);
+  color: var(--ink);
+}
+
+/* ============================================================
+   Button system
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  border: 0;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn:active { transform: scale(0.98); }
+
+/* Marketing-scale pill — 100px radius */
+.btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--button-lg-size);
+  font-weight: var(--button-lg-weight);
+  line-height: var(--button-lg-lh);
+  padding: 0 var(--space-lg);
+  height: 48px;
+  border-radius: var(--rounded-pill);
+}
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  background: var(--hairline-strong);
+  color: var(--canvas);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: var(--button-lg-size);
+  font-weight: var(--button-lg-weight);
+  line-height: var(--button-lg-lh);
+  padding: 0 var(--space-lg);
+  height: 48px;
+  border-radius: var(--rounded-pill);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+.btn-secondary:hover { background: var(--canvas-soft); }
+
+/* In-app onboarding / scan — 56pt tall pill */
+.btn-onboarding {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--button-lg-size);
+  font-weight: var(--button-lg-weight);
+  padding: 0 var(--space-lg);
+  height: 56px;
+  border-radius: var(--rounded-pill);
+  width: 100%;
+}
+.btn-onboarding:hover { background: var(--primary-hover); }
+.btn-onboarding:disabled {
+  background: var(--hairline-strong);
+  color: var(--canvas);
+  cursor: not-allowed;
+}
+
+.btn-scan {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--button-lg-size);
+  font-weight: var(--button-lg-weight);
+  padding: 0 var(--space-lg);
+  height: 60px;
+  border-radius: var(--rounded-pill);
+  width: 100%;
+  box-shadow: var(--elev-4);
+}
+.btn-scan:hover { background: var(--primary-hover); }
+
+/* Nav-scale CTA — 6px square pill, deliberate scale break */
+.btn-nav-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-strong-weight);
+  letter-spacing: var(--body-sm-tracking);
+  padding: 0 var(--space-sm);
+  height: 28px;
+  border-radius: var(--rounded-sm);
+}
+.btn-nav-primary:hover { background: var(--primary-hover); }
+.btn-nav-secondary {
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-strong-weight);
+  letter-spacing: var(--body-sm-tracking);
+  padding: 0 var(--space-sm);
+  height: 28px;
+  border-radius: var(--rounded-sm);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+.btn-nav-secondary:hover { background: var(--canvas-soft); }
+
+/* Small-scale primary — in-product cluster CTAs */
+.btn-primary-sm {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--button-md-size);
+  font-weight: var(--button-md-weight);
+  padding: 0 var(--space-md);
+  height: 36px;
+  border-radius: var(--rounded-pill);
+}
+.btn-primary-sm:hover { background: var(--primary-hover); }
+.btn-secondary-sm {
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: var(--button-md-size);
+  font-weight: var(--button-md-weight);
+  padding: 0 var(--space-md);
+  height: 36px;
+  border-radius: var(--rounded-pill);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+.btn-secondary-sm:hover { background: var(--canvas-soft); }
+
+/* Text link — the only place trust-blue survives as an action colour */
+.link {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.link:hover { color: var(--link-deep); }
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.card {
+  background: var(--canvas);
+  border-radius: var(--rounded-md);
+  padding: var(--space-md);
+  box-shadow: var(--elev-1);
+}
+.card-feature {
+  background: var(--canvas);
+  border-radius: var(--rounded-md);
+  padding: var(--space-lg);
+  box-shadow: var(--elev-3);
+}
+.card-pricing {
+  background: var(--canvas);
+  border-radius: var(--rounded-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--elev-3);
+}
+.card-pricing-featured {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--rounded-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--elev-4);
+}
+.card-deadline {
+  background: var(--canvas);
+  border-radius: var(--rounded-md);
+  padding: var(--space-md);
+  box-shadow: var(--elev-2);
+}
+.card-triage {
+  background: var(--canvas-soft);
+  border-radius: var(--rounded-md);
+  padding: var(--space-lg);
+  box-shadow: var(--elev-2);
+}
+.card-tip {
+  background: var(--canvas-soft-2);
+  border-radius: var(--rounded-md);
+  padding: var(--space-md);
+  box-shadow: var(--elev-1);
+}
+.card-selection {
+  background: var(--canvas);
+  border-radius: var(--rounded-md);
+  padding: var(--space-md);
+  box-shadow: var(--elev-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease);
+}
+.card-selection:hover { background: var(--canvas-soft); }
+.card-selection.selected {
+  background: var(--canvas-soft-2);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+/* ============================================================
+   Form inputs
+   ============================================================ */
+.form-input {
+  display: block;
+  width: 100%;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--body-sm-size);
+  letter-spacing: var(--body-sm-tracking);
+  padding: 0 var(--space-sm);
+  height: 40px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-sm);
+  outline: none;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.form-input:focus { border-color: var(--primary); }
+.form-input.error { border-color: var(--error); }
+.form-input::placeholder { color: var(--mute); }
+
+/* ============================================================
+   Badges — urgency capsules, etc
+   ============================================================ */
+.urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  height: 24px;
+  padding: 0 var(--space-xs);
+  border-radius: var(--rounded-pill);
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-strong-weight);
+  letter-spacing: var(--body-sm-tracking);
+  white-space: nowrap;
+}
+.urgency-badge.urgent {
+  background: var(--error-soft);
+  color: var(--error-deep);
+}
+.urgency-badge.attention {
+  background: var(--warning-soft);
+  color: var(--warning-deep);
+}
+.urgency-badge.low {
+  background: var(--link-bg-soft);
+  color: var(--link-deep);
+}
+
+.badge-secondary {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 var(--space-xs);
+  background: var(--canvas-soft);
+  color: var(--body);
+  font-family: var(--font-mono);
+  font-size: var(--caption-size);
+  border-radius: var(--rounded-pill);
+}
+
+/* ============================================================
+   Code-editor mockup — dark surface for OCR'd Dutch text
+   ============================================================ */
+.code-editor {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--rounded-md);
+  padding: var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: var(--code-size);
+  line-height: var(--code-lh);
+}
+.code-editor .filename {
+  font-family: var(--font-mono);
+  font-size: var(--caption-size);
+  color: #888;
+  margin-bottom: var(--space-md);
+}
+
+/* ============================================================
+   Hero band — the mesh gradient as decorative chrome
+   ============================================================ */
+.hero-band {
+  background: var(--gradient-mesh);
+  background-color: var(--canvas-soft);
+  padding: var(--space-section) var(--space-lg);
+}
+
+/* ============================================================
+   Utility — vertical stack with token gaps
+   ============================================================ */
+.stack-xxs > * + * { margin-top: var(--space-xxs); }
+.stack-xs  > * + * { margin-top: var(--space-xs); }
+.stack-sm  > * + * { margin-top: var(--space-sm); }
+.stack-md  > * + * { margin-top: var(--space-md); }
+.stack-lg  > * + * { margin-top: var(--space-lg); }
+.stack-xl  > * + * { margin-top: var(--space-xl); }
+.stack-2xl > * + * { margin-top: var(--space-2xl); }
+
+.row { display: flex; align-items: center; }
+.row-gap-xs { gap: var(--space-xs); }
+.row-gap-sm { gap: var(--space-sm); }
+.row-gap-md { gap: var(--space-md); }
+.row-gap-lg { gap: var(--space-lg); }
+
+/* Verified-sender check colour utility */
+.verified { color: var(--success-deep); }

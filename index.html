@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BlueLetter — Dutch government letters, finally in your language.</title>
+<meta name="description" content="BlueLetter scans your Dutch government letters, translates them to plain English, and reminds you before any deadline. Early access opening for internationals in the Netherlands."/>
+<meta property="og:title" content="BlueLetter — Dutch government letters, finally in your language."/>
+<meta property="og:description" content="Scan any letter. Get a clear translation. Never miss a deadline. Built for the 1.3 million internationals who can't read their own mail."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://blueletter.app"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="BlueLetter — Dutch government letters, finally in your language."/>
+<meta name="twitter:description" content="Scan any letter. Get a clear translation. Never miss a deadline."/>
+<link rel="stylesheet" href="tokens.css"/>
+<link rel="stylesheet" href="landing.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#top" aria-label="BlueLetter home">
+        <img src="assets/wordmark.svg" alt="BlueLetter" class="brand-wordmark"/>
+      </a>
+      <div class="nav-links">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#demo" class="nav-link">See it</a>
+        <a href="#senders" class="nav-link">Senders</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+    </div>
+    <a href="#signup" class="btn btn-nav-primary">Get early access</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Coming September 2026 · iOS</span>
+      <h1>Dutch government letters, finally in your language.</h1>
+      <p class="lede">Scan any letter. Get a clear translation. Never miss a deadline. Built for the 1.3 million internationals who can't read their own mail.</p>
+
+      <div class="form-wrap" id="signup">
+        <form class="email-form" id="hero-form" novalidate>
+          <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address"/>
+          <button type="submit">
+            <span class="label">Get early access</span>
+          </button>
+        </form>
+        <div class="form-error" id="hero-error">Please enter a valid email address.</div>
+        <div class="form-meta">NO SPAM · ONE EMAIL AT LAUNCH · UNSUBSCRIBE ANYTIME</div>
+        <div class="form-success" id="hero-success">
+          <div class="check">&#10003;</div>
+          <div class="form-success-text">
+            <strong>You're on the list.</strong>
+            <small>POSITION #<span data-position>1248</span> · WE'LL EMAIL YOU IN SEPTEMBER</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="waitlist-counter">
+        <span class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </span>
+        <span class="count"><strong data-waitlist-count>1,247</strong> internationals on the waitlist</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-phone">
+        <div class="phone-shell">
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>9:41</span>
+              <div class="notch"></div>
+              <span style="font-size:11px;">5G &#9210; 87%</span>
+            </div>
+            <div class="phone-body">
+              <div class="phone-header-row">
+                <h2>Inbox.</h2>
+                <div class="avatar"></div>
+              </div>
+
+              <div class="phone-letter-card">
+                <div class="phone-sender-row">
+                  <div class="phone-sender-icon">
+                    <img src="assets/senders/belastingdienst.svg" alt=""/>
+                  </div>
+                  <div>
+                    <div class="phone-sender-name">Belastingdienst</div>
+                    <div class="phone-sender-sub">Annual tax return</div>
+                  </div>
+                  <span class="badge-pill urgent" style="margin-left:auto;">Urgent</span>
+                </div>
+                <div class="phone-deadline">
+                  <div class="phone-deadline-label">Deadline</div>
+                  <div class="phone-deadline-date">November 30, 2025</div>
+                  <div class="phone-deadline-cost">Late filing: <strong>&euro;68 fine.</strong></div>
+                </div>
+                <div class="phone-summary">
+                  Pay <strong>&euro;1,247</strong> to the tax authority by Nov 30. We've added it to your calendar.
+                </div>
+              </div>
+
+              <div class="phone-letter-card compact">
+                <div class="phone-sender-row">
+                  <div class="phone-sender-icon">
+                    <img src="assets/senders/duo.svg" alt=""/>
+                  </div>
+                  <div>
+                    <div class="phone-sender-name">DUO</div>
+                    <div class="phone-sender-sub">Loan statement</div>
+                  </div>
+                  <span class="quiet-meta">No action</span>
+                </div>
+              </div>
+
+              <div class="phone-letter-card compact">
+                <div class="phone-sender-row">
+                  <div class="phone-sender-icon">
+                    <img src="assets/senders/gemeente.svg" alt=""/>
+                  </div>
+                  <div>
+                    <div class="phone-sender-name">Gemeente Amsterdam</div>
+                    <div class="phone-sender-sub">Address change</div>
+                  </div>
+                  <span class="quiet-meta">Done</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SENDERS -->
+<section class="senders" id="senders">
+  <div class="senders-label">We translate letters from the seven senders that matter</div>
+  <div class="sender-grid">
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/belastingdienst.svg" alt=""/></div><div class="sender-name">BELASTING&shy;DIENST</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/duo.svg" alt=""/></div><div class="sender-name">DUO</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/ind.svg" alt=""/></div><div class="sender-name">IND</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/cjib.svg" alt=""/></div><div class="sender-name">CJIB</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/gemeente.svg" alt=""/></div><div class="sender-name">GEMEENTE</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/uwv.svg" alt=""/></div><div class="sender-name">UWV</div></div>
+    <div class="sender-tile"><div class="sender-icon"><img src="assets/senders/kvk.svg" alt=""/></div><div class="sender-name">KvK</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-header reveal">
+    <span class="eyebrow-text">How it works</span>
+    <h2>Three steps. One letter. Zero panic.</h2>
+    <p class="sub">No typing, no copy-paste, no Google Translate. Point your phone at the envelope and you're done.</p>
+  </div>
+  <div class="step-grid">
+    <div class="step-card reveal">
+      <div class="step-num">01</div>
+      <div class="step-tile read">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h3l2-3h8l2 3h3v12H3V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      </div>
+      <h3>Scan.</h3>
+      <p>Point your phone at the letter. Works on creased paper, awkward fonts, even faded ink. The whole letter is read in about 4 seconds.</p>
+      <div class="step-detail">CAMERA + ON-DEVICE OCR</div>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">02</div>
+      <div class="step-tile translate">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h7M7.5 5v2M5 12c.5-2 1.5-4 2.5-5M10 12c-.5-2-1.5-4-2.5-5"/><path d="M13 19l3-8 3 8M14 17h4"/></svg>
+      </div>
+      <h3>Translate.</h3>
+      <p>Full translation plus a plain-language summary: what the letter says, what you need to do, by when, and what it costs if you don't.</p>
+      <div class="step-detail">AI · VERIFY WITH DUTCH ORIGINAL FOR HIGH-STAKES DECISIONS</div>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">03</div>
+      <div class="step-tile remind">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 9a6 6 0 1 1 12 0v4l2 3H4l2-3V9z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+      </div>
+      <h3>Remind.</h3>
+      <p>Deadlines wired to push notifications and your calendar. Two reminders before, one on the day. Snooze, mark done, or hand off to Apple Calendar.</p>
+      <div class="step-detail">PUSH · CALENDAR · FOCUS-AWARE</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section class="section alt" id="demo">
+  <div class="section-header reveal">
+    <span class="eyebrow-text">Before · After</span>
+    <h2>One letter, two views.</h2>
+    <p class="sub">Here's a real Belastingdienst letter on the left. Here's what BlueLetter gives you back on the right.</p>
+  </div>
+
+  <div class="demo-grid">
+    <div class="demo-before reveal">
+      <div class="demo-before-meta">Original · Dutch</div>
+      <div class="demo-before-letterhead">Belastingdienst</div>
+      <p>Geachte heer/mevrouw,</p>
+      <p>Hierbij ontvangt u uw definitieve aanslag inkomstenbelasting over het belastingjaar 2024.</p>
+      <p>Uit onze berekening blijkt dat u een bedrag van <strong>&euro; 1.247,00</strong> moet betalen. Dit bedrag dient uiterlijk <strong>30 november 2025</strong> op rekening NL86 INGB 0002 4455 88 t.n.v. Belastingdienst te zijn bijgeschreven.</p>
+      <p>Bij niet tijdige betaling wordt een verzuimboete van &euro; 68,00 in rekening gebracht. Voor betalingsregelingen kunt u contact opnemen via Mijn Belastingdienst.</p>
+      <p>Met vriendelijke groet,<br>De inspecteur</p>
+    </div>
+
+    <div class="demo-arrow" aria-hidden="true">&rarr;</div>
+
+    <div class="demo-after reveal">
+      <div class="demo-after-meta">BlueLetter · English</div>
+
+      <div class="demo-sender-row">
+        <div class="icon"><img src="assets/senders/belastingdienst.svg" alt=""/></div>
+        <div>
+          <div class="name">Belastingdienst</div>
+          <div class="sub">Final tax assessment · 2024</div>
+        </div>
+        <span class="badge-pill urgent">Urgent</span>
+      </div>
+
+      <div class="demo-deadline">
+        <div class="demo-deadline-label">Pay by</div>
+        <div class="demo-deadline-date">November 30, 2025</div>
+        <div class="demo-deadline-cost">Miss it: <strong>&euro;68 late-filing fine.</strong></div>
+      </div>
+
+      <div class="demo-summary-block">
+        <div class="demo-summary-label">What to do</div>
+        <div class="demo-summary-text">
+          Pay <strong>&euro;1,247.00</strong> to <strong>NL86 INGB 0002 4455 88</strong> (Belastingdienst) by Nov 30. This is your final 2024 income-tax bill. To set up a payment plan, log into Mijn Belastingdienst.
+        </div>
+      </div>
+
+      <div class="demo-actions">
+        <button class="demo-action-btn primary">Add to calendar</button>
+        <button class="demo-action-btn">Mark done</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-header reveal">
+    <span class="eyebrow-text">From the beta</span>
+    <h2>Three weeks in. 127 letters read.</h2>
+    <p class="sub">Internationals in Amsterdam, Utrecht, and Rotterdam testing the iOS beta. All names with permission.</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="testimonial reveal">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="meta-row">BELASTINGDIENST · TAX BILL</div>
+      <blockquote>"I'd been ignoring a stack of Belastingdienst envelopes for six weeks. BlueLetter found a &euro;1,247 tax bill I had nine days to pay. Worth it for that one letter."</blockquote>
+      <div class="testimonial-attr">
+        <div class="testimonial-avatar a">AK</div>
+        <div>
+          <div class="testimonial-name">Anna K.</div>
+          <div class="testimonial-role">Software engineer · 3 yrs in Amsterdam</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial reveal">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="meta-row">DUO · STUDENT LOAN</div>
+      <blockquote>"DUO letters made absolutely no sense to me. Now I get a push two weeks before any deadline. Sleep returned."</blockquote>
+      <div class="testimonial-attr">
+        <div class="testimonial-avatar b">MT</div>
+        <div>
+          <div class="testimonial-name">Marco T.</div>
+          <div class="testimonial-role">PhD student · 1 yr in Utrecht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial reveal">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="meta-row">IND · PERMIT RENEWAL</div>
+      <blockquote>"My IND renewal letter arrived while I was on holiday in Lisbon. BlueLetter told me what to do before I even landed back home."</blockquote>
+      <div class="testimonial-attr">
+        <div class="testimonial-avatar c">PR</div>
+        <div>
+          <div class="testimonial-name">Priya R.</div>
+          <div class="testimonial-role">Partner visa · 4 yrs in Rotterdam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt" id="faq">
+  <div class="faq-grid">
+    <div class="reveal">
+      <span class="eyebrow-text" style="font-family:var(--font-mono); font-size:12px; color:var(--mute); letter-spacing:0.5px; text-transform:uppercase; display:block; margin-bottom:12px;">Questions</span>
+      <h2 style="font-size:40px; font-weight:600; letter-spacing:-2px; line-height:1.05; margin:0; text-wrap:balance;">The six things you'll ask before signing up.</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>Is BlueLetter affiliated with the Dutch government?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          No. BlueLetter is an independent translation service built in Amsterdam. The official government channels remain <a href="https://mijn.overheid.nl" target="_blank" rel="noopener">Mijn Overheid</a>, Mijn Belastingdienst, and each sender's own portal. We don't replace them — we just make their letters readable.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>Which letters does it support?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          Letters from the seven senders that account for about 95% of international mail: Belastingdienst, DUO, IND, CJIB, Gemeente, UWV, and KvK. Other senders work too — they just don't get a custom icon yet.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>Can I trust the translation for legal decisions?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          For day-to-day understanding, yes. For high-stakes decisions — residence-permit renewals, large fines, court correspondence — verify with the original Dutch text or a qualified translator. Every BlueLetter translation carries this disclaimer in the app.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>How much will it cost?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          Two free scans per month, forever. Unlimited Pro is <strong>&euro;4.99/month</strong> or <strong>&euro;39/year</strong>. Early-access signups get the year price locked at &euro;29 for life — that's the only launch promise we're making.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>What languages do you translate into?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          English at launch. Spanish, Polish, Hindi, Mandarin, Turkish, and Arabic are queued for Q3 2026 — in the order of the largest international communities in the Netherlands. Vote for yours when you sign up.
+        </div></div>
+      </details>
+
+      <details class="faq-item" data-faq>
+        <summary class="faq-q">
+          <span>When does it actually launch?</span>
+          <span class="toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-a"><div class="faq-a-inner">
+          Public iOS launch: <strong>September 2026</strong>. Closed TestFlight beta: July 2026 (first 500 on the waitlist). Android: 2027 if iOS proves the model. We'll email you the moment your slot opens.
+        </div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER NOTE -->
+<section class="founder">
+  <div class="founder-inner reveal">
+    <div class="founder-eyebrow">A note from the founder</div>
+    <h2>I built BlueLetter after my third missed deadline.</h2>
+    <p>In 2023, a Belastingdienst envelope sat unopened on my counter for six weeks. By the time I dragged it through Google Translate, the deadline was four days gone. The fine was &euro;260. I'd lived in the Netherlands for two years.</p>
+    <p>So I asked around. Every international I knew had the same story — a DUO letter no one could read, an IND form bounced because of one missed checkbox, a Gemeente notice that turned out to be a parking ticket eight months later. We were all collectively losing thousands of euros to envelopes.</p>
+    <p>The Dutch government is excellent. The letters aren't the problem. The problem is they only arrive in Dutch, on paper, and assume you can read both. For 1.3 million internationals here, that assumption costs us money — and sometimes status.</p>
+    <p>BlueLetter reads every letter for you. Scan it, get the translation, get the deadline. That's the whole product. If you've ever stood in your hallway holding an envelope you couldn't read, this is for you.</p>
+    <div class="founder-sig">
+      <div class="founder-avatar">TV</div>
+      <div>
+        <div class="founder-name">Tom&aacute;s Vermeer</div>
+        <div class="founder-role">Founder, BlueLetter · Amsterdam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="signup-footer">
+  <div class="footer-cta reveal dark-wrap">
+    <div class="eyebrow-text">One last chance</div>
+    <h2>Be first when BlueLetter launches.</h2>
+    <div class="form-wrap" style="max-width:520px;">
+      <form class="email-form dark" id="footer-form" novalidate>
+        <input type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address"/>
+        <button type="submit"><span class="label">Get early access</span></button>
+      </form>
+      <div class="form-error" id="footer-error" style="color:#ff9b9b;">Please enter a valid email address.</div>
+      <div class="form-meta" style="color:#888;">NO SPAM · ONE EMAIL AT LAUNCH · UNSUBSCRIBE ANYTIME</div>
+      <div class="form-success" id="footer-success">
+        <div class="check">&#10003;</div>
+        <div class="form-success-text">
+          <strong>You're on the list.</strong>
+          <small>POSITION #<span data-position>1248</span> · WE'LL EMAIL YOU IN SEPTEMBER</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-brand">
+      <img src="assets/wordmark.svg" alt="BlueLetter" style="height:14px; filter:invert(1);"/>
+      <span class="sep">&middot;</span>
+      <span>&copy; 2026 BlueLetter B.V. — Built in Amsterdam.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="mailto:hello@blueletter.app">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- INTERACTIONS -->
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  document.querySelectorAll('[data-faq]').forEach(function (el) {
+    el.addEventListener('toggle', function () {
+      el.classList.toggle('open', el.open);
+    });
+  });
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var BASE_COUNT = 1247;
+
+  function getStoredEmail() {
+    try { return localStorage.getItem('bl_signup_email') || ''; } catch (e) { return ''; }
+  }
+  function setStoredEmail(email) {
+    try { localStorage.setItem('bl_signup_email', email); } catch (e) {}
+  }
+  function getPosition() {
+    try {
+      var p = parseInt(localStorage.getItem('bl_signup_position'), 10);
+      if (!p) {
+        p = BASE_COUNT + 1 + Math.floor(Math.random() * 4);
+        localStorage.setItem('bl_signup_position', String(p));
+      }
+      return p;
+    } catch (e) { return BASE_COUNT + 1; }
+  }
+
+  function applySuccessState() {
+    var pos = getPosition();
+    document.querySelectorAll('[data-position]').forEach(function (el) {
+      el.textContent = pos.toLocaleString();
+    });
+    document.querySelectorAll('[data-waitlist-count]').forEach(function (el) {
+      el.textContent = (BASE_COUNT + 1).toLocaleString();
+    });
+    document.querySelectorAll('.email-form').forEach(function (f) { f.style.display = 'none'; });
+    document.querySelectorAll('.form-success').forEach(function (s) { s.classList.add('show'); });
+  }
+
+  function wireForm(formId, errorId) {
+    var form = document.getElementById(formId);
+    var error = document.getElementById(errorId);
+    if (!form) return;
+    var input = form.querySelector('input[type="email"]');
+    var button = form.querySelector('button');
+    var label = button.querySelector('.label');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = (input.value || '').trim();
+      if (!EMAIL_RE.test(v)) {
+        input.classList.add('error');
+        error.classList.add('show');
+        input.focus();
+        return;
+      }
+      input.classList.remove('error');
+      error.classList.remove('show');
+
+      button.disabled = true;
+      label.style.display = 'none';
+      var spinner = document.createElement('span');
+      spinner.className = 'spinner';
+      button.prepend(spinner);
+
+      fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: v }),
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) throw new Error(data.error || 'Signup failed');
+            return data;
+          });
+        })
+        .then(function (data) {
+          setStoredEmail(v);
+          if (data.position) {
+            try { localStorage.setItem('bl_signup_position', String(data.position)); } catch (e) {}
+          }
+          applySuccessState();
+        })
+        .catch(function (err) {
+          spinner.remove();
+          label.style.display = '';
+          button.disabled = false;
+          error.textContent = err.message || 'Something went wrong. Try again.';
+          error.classList.add('show');
+        });
+    });
+
+    input.addEventListener('input', function () {
+      if (input.classList.contains('error') && EMAIL_RE.test(input.value)) {
+        input.classList.remove('error');
+        error.classList.remove('show');
+      }
+    });
+  }
+
+  wireForm('hero-form', 'hero-error');
+  wireForm('footer-form', 'footer-error');
+
+  if (getStoredEmail()) {
+    applySuccessState();
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+
+</body>
+</html>
