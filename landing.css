@@ -1,10 +1,11 @@
 /* ============================================================
    BlueLetter landing — section styles (v2 polish)
-   Layered on top of tokens.css.
+   Layered on top of colors_and_type.css tokens.
    Inspired by vercel.com craft level.
    ============================================================ */
 
 :root {
+  /* Polish-specific tokens (override defaults from design system) */
   --hairline-soft: rgba(0, 0, 0, 0.06);
   --hairline-faint: rgba(0, 0, 0, 0.04);
   --card-shadow:
@@ -143,7 +144,7 @@ body { background: var(--canvas-soft); }
   pointer-events: none;
   z-index: 1;
 }
-/* Film grain overlay */
+/* Film grain overlay — SVG fractal noise, fixed-position over hero only */
 .hero-grain {
   position: absolute;
   inset: 0;
@@ -394,7 +395,7 @@ body { background: var(--canvas-soft); }
     0 0 24px -8px rgba(122, 167, 255, 0.5);
 }
 .email-form.dark + .form-meta { color: #666; }
-.email-form.dark ~ .form-success {
+.email-form.dark + .form-success {
   background: #161616;
   border-color: rgba(255, 255, 255, 0.08);
 }
@@ -436,7 +437,7 @@ body { background: var(--canvas-soft); }
 .waitlist-counter strong { color: var(--ink); font-weight: 500; }
 
 /* ============================================================
-   HERO PHONE MOCKUP
+   HERO PHONE MOCKUP — preserved as-is per brief
    ============================================================ */
 .hero-phone {
   position: relative;
@@ -1319,3 +1320,649 @@ body { background: var(--canvas-soft); }
   opacity: 1;
   transform: none;
 }
+
+/* ============================================================
+   HERO META — single-line mono caps under form
+   ============================================================ */
+.hero-meta-caps {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.hero-meta-caps .dot-sep {
+  display: inline-block;
+  width: 3px; height: 3px;
+  border-radius: 999px;
+  background: var(--hairline-strong);
+}
+.hero-meta-caps strong { color: var(--ink); font-weight: 500; }
+
+/* Hide the "How it works" eyebrow on hero (we don't have one) */
+
+/* ============================================================
+   OBJECTIONS — 3 horizontal answer cards
+   ============================================================ */
+.objections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.objection-card {
+  background: var(--canvas);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: transform 240ms var(--ease), box-shadow 240ms var(--ease);
+}
+.objection-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+.objection-card .obj-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--mute);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.objection-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.88px;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.objection-card .obj-quote {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--mute);
+  letter-spacing: 0.1px;
+  padding: 14px 16px;
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline-soft);
+  border-radius: 10px;
+  position: relative;
+}
+.objection-card .obj-answer {
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.55;
+  margin: 0;
+  text-wrap: pretty;
+}
+.objection-card .obj-answer strong { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 960px) {
+  .objections { grid-template-columns: 1fr; padding: 0 20px; }
+}
+
+/* ============================================================
+   VALUE EQUATION — 2x2 grid of levers
+   ============================================================ */
+.value-equation {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.equation-formula {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--mute);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 0 auto 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: var(--canvas);
+  border: 1px solid var(--hairline-soft);
+  border-radius: 999px;
+}
+.equation-formula .frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+.equation-formula .frac .top { padding-bottom: 2px; }
+.equation-formula .frac .bot {
+  padding-top: 2px;
+  border-top: 1px solid var(--hairline-strong);
+  color: var(--ink);
+}
+.equation-formula em { font-style: normal; color: var(--ink); font-weight: 500; }
+.equation-wrap { text-align: center; }
+.equation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+.equation-card {
+  background: var(--canvas);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 240ms var(--ease), box-shadow 240ms var(--ease);
+}
+.equation-card:hover { transform: translateY(-2px); box-shadow: var(--card-shadow-hover); }
+.equation-card .lever {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--mute);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.equation-card .lever .pill {
+  display: inline-block;
+  padding: 3px 8px;
+  background: var(--canvas-soft-2);
+  border-radius: 6px;
+  border: 1px solid var(--hairline-soft);
+}
+.equation-card h3 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1.4px;
+  line-height: 1.05;
+  margin: 0;
+  text-wrap: balance;
+}
+.equation-card .eq-supporting {
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.55;
+  margin: 0;
+}
+.equation-card .eq-supporting strong { color: var(--ink); font-weight: 500; }
+
+/* Inline avatars + rating row for Likelihood card */
+.beta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--hairline-soft);
+}
+.avatar-stack {
+  display: inline-flex;
+}
+.avatar-stack .av {
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  border: 2px solid var(--canvas);
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+}
+.avatar-stack .av:first-child { margin-left: 0; }
+.avatar-stack .av.a { background: linear-gradient(135deg, #ffb38a, #ff9b3d); }
+.avatar-stack .av.b { background: linear-gradient(135deg, #7aa7ff, #0070f3); }
+.avatar-stack .av.c { background: linear-gradient(135deg, #f5e6d3, #f9cb28); }
+.avatar-stack .av.d { background: linear-gradient(135deg, #c5e7d0, #50e3c2); color: #0d4d28; }
+.avatar-stack .av.e { background: linear-gradient(135deg, #e0d0ff, #a99eff); }
+.beta-rating {
+  font-size: 13px;
+  color: var(--body);
+}
+.beta-rating .stars { color: var(--warning); letter-spacing: 1px; }
+.beta-rating strong { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 880px) {
+  .equation-grid { grid-template-columns: 1fr; }
+  .equation-card { padding: 24px; }
+  .equation-card h3 { font-size: 24px; letter-spacing: -1.1px; }
+}
+
+/* ============================================================
+   VALUE STACK — vertical itemized list with right-aligned prices
+   ============================================================ */
+.value-stack-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.value-stack {
+  background: var(--canvas);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 8px 0;
+  overflow: hidden;
+}
+.stack-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.stack-row:last-child { border-bottom: 0; }
+.stack-row .item-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.32px;
+  margin: 0 0 4px;
+}
+.stack-row .item-desc {
+  font-size: 14px;
+  color: var(--body);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 520px;
+}
+.stack-row .item-value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.stack-row.total {
+  background: var(--canvas-soft);
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-top: 1px solid var(--hairline);
+}
+.stack-row.total .item-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--mute);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+  margin: 0;
+}
+.stack-row.total .item-value {
+  font-size: 16px;
+  font-weight: 500;
+}
+.stack-row.strike .item-value {
+  color: var(--mute);
+  text-decoration: line-through;
+}
+.stack-row.final {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.stack-row.final .item-name {
+  color: var(--on-primary);
+  font-size: 16px;
+  font-family: var(--font-sans);
+  letter-spacing: -0.32px;
+  text-transform: none;
+  font-weight: 500;
+}
+.stack-row.final .item-name small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.stack-row.final .item-value {
+  color: var(--on-primary);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-family: var(--font-sans);
+}
+.stack-row.final .item-value small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.4px;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.stack-footnote {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--mute);
+  letter-spacing: 0.3px;
+  margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .value-stack-wrap { padding: 0 16px; }
+  .stack-row { padding: 18px 20px; gap: 12px; }
+  .stack-row .item-name { font-size: 15px; }
+  .stack-row .item-desc { font-size: 13px; }
+  .stack-row.final .item-value { font-size: 22px; }
+}
+
+/* ============================================================
+   RISK REVERSAL — single centered guarantee card
+   ============================================================ */
+.guarantee-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.guarantee {
+  background: var(--canvas);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 48px 48px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.guarantee::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--success-deep);
+  opacity: 0.85;
+}
+.guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 8px;
+  background: rgba(13, 128, 25, 0.08);
+  color: var(--success-deep);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.guarantee-badge .shield {
+  width: 18px; height: 18px;
+  background: var(--success-deep);
+  color: white;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+.guarantee h2 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.guarantee p {
+  font-size: 17px;
+  color: var(--body);
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 560px;
+  text-wrap: pretty;
+}
+.guarantee p strong { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 640px) {
+  .guarantee { padding: 36px 24px 32px; }
+  .guarantee h2 { font-size: 26px; letter-spacing: -1.1px; }
+  .guarantee p { font-size: 15px; }
+}
+
+/* ============================================================
+   URGENCY BANNER — scarcity + progress bar
+   ============================================================ */
+.urgency-banner-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.urgency-banner {
+  background: var(--canvas);
+  border: 1px solid var(--hairline-soft);
+  border-radius: var(--card-radius);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+}
+.urgency-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.urgency-copy .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--error-deep);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.urgency-copy .label::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: var(--error);
+  box-shadow: 0 0 0 4px rgba(238, 0, 0, 0.12);
+  animation: pulseDot 1.8s var(--ease) infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(238, 0, 0, 0.12); }
+  50%      { box-shadow: 0 0 0 7px rgba(238, 0, 0, 0.04); }
+}
+.urgency-copy h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.66px;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.urgency-copy h3 strong { font-weight: 600; }
+.urgency-copy .urgency-sub {
+  font-size: 14px;
+  color: var(--body);
+  margin: 4px 0 0;
+}
+
+.urgency-progress {
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+.urgency-progress .count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.urgency-progress .count .filled { color: var(--ink); font-weight: 500; }
+.urgency-progress .count .total { color: var(--mute); }
+.urgency-progress .bar {
+  width: 100%;
+  height: 8px;
+  background: var(--canvas-soft-2);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.urgency-progress .bar .fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 999px;
+  width: 0;
+  transition: width 1100ms var(--ease) 200ms;
+}
+.urgency-progress .bar.in .fill { width: var(--progress, 87%); }
+.urgency-progress .pct {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--mute);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .urgency-banner { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+  .urgency-progress { align-items: flex-start; min-width: 0; width: 100%; }
+}
+
+/* ============================================================
+   FINAL CTA — dark band, centered single form
+   ============================================================ */
+.final-cta {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  isolation: isolate;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: -10% 0 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 112, 243, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 25% 100%, rgba(255, 155, 61, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.final-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.final-cta .eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #a1a1a1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  display: block;
+}
+.final-cta h2 {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -2.8px;
+  line-height: 1.0;
+  margin: 0 0 36px;
+  text-wrap: balance;
+  color: var(--on-primary);
+}
+.final-cta .form-wrap { margin: 0 auto; max-width: 480px; }
+.final-cta .hero-meta-caps { justify-content: center; color: #666; }
+.final-cta .hero-meta-caps strong { color: #f0f0f0; }
+.final-cta .hero-meta-caps .dot-sep { background: #404040; }
+
+@media (max-width: 768px) {
+  .final-cta { padding: 80px 0; }
+  .final-cta h2 { font-size: 36px; letter-spacing: -1.5px; }
+}
+
+/* ============================================================
+   FOOTER (minimal — legal only, no big CTA repeat)
+   ============================================================ */
+.footer-min {
+  background: var(--canvas-soft);
+  border-top: 1px solid var(--hairline-soft);
+  padding: 32px 0 40px;
+}
+.footer-min-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer-min .brand-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--mute);
+  font-size: 12px;
+}
+.footer-min .brand-row .sep { color: var(--hairline-strong); }
+.footer-min .brand-row img { height: 13px; }
+.footer-min-links { display: flex; gap: 22px; font-size: 12px; }
+.footer-min-links a {
+  color: var(--mute);
+  text-decoration: none;
+  transition: color 150ms var(--ease);
+}
+.footer-min-links a:hover { color: var(--ink); }
+
+@media (max-width: 640px) {
+  .footer-min-inner { padding: 0 20px; flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   TESTIMONIALS — minimal variant (no stars per Hormozi brief)
+   ============================================================ */
+.testimonial-grid.lean .testimonial::before { display: none; }
+.testimonial-grid.lean .testimonial { padding: 28px; gap: 14px; }
+.testimonial-grid.lean .testimonial .stars { display: none; }
+.testimonial-grid.lean .testimonial blockquote {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   FILM GRAIN — refined: lower opacity, fixed position OK on hero
+   (existing .hero-grain handles this; opacity tuned to ~4% via mix-blend)
+   ============================================================ */
+.hero-grain { opacity: 0.35; }
