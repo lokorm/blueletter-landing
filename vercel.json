@@ -3,6 +3,8 @@
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/confirmed", "destination": "/confirmed.html" },
     { "source": "/zzp", "destination": "/zzp.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

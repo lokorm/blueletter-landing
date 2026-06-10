@@ -1,0 +1,157 @@
+/* ============================================================
+   BlueLetter pre-launch landing pages — shared scaffolding
+   Builds on shared/colors_and_type.css tokens. Token-driven so
+   [data-theme="dark"] flips every component automatically.
+   ============================================================ */
+
+html { scroll-behavior: smooth; }
+html[data-motion="off"] *,
+html[data-motion="off"] *::before,
+html[data-motion="off"] *::after {
+  animation-duration: 0.001s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001s !important;
+}
+
+/* ---------- Nav ---------- */
+.bl-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--canvas);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.bl-nav.scrolled { border-bottom-color: var(--hairline); }
+.bl-nav-inner {
+  max-width: 1400px; margin: 0 auto; height: 64px;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.bl-nav-left { display: flex; align-items: center; gap: 32px; min-width: 0; }
+.bl-wordmark {
+  font-family: var(--font-sans); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.88px; color: var(--ink); text-decoration: none;
+  white-space: nowrap;
+}
+.bl-wordmark .dot { color: var(--mute); }
+.bl-nav-links { display: flex; gap: 18px; }
+.bl-nav-links a {
+  font-size: 14px; letter-spacing: -0.28px; color: var(--body);
+  text-decoration: none; white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease);
+}
+.bl-nav-links a:hover { color: var(--ink); }
+.bl-nav-right { display: flex; align-items: center; gap: 8px; }
+
+/* ---------- Waitlist form ---------- */
+.bl-waitlist { width: 100%; max-width: 460px; }
+.bl-waitlist form {
+  display: flex; gap: 8px; align-items: stretch;
+}
+.bl-waitlist input[type="email"] {
+  flex: 1; min-width: 0; height: 48px;
+  background: var(--canvas); color: var(--ink);
+  font-family: var(--font-sans); font-size: var(--body-sm-size);
+  letter-spacing: var(--body-sm-tracking);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--hairline); border-radius: var(--rounded-pill);
+  outline: none;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.bl-waitlist input[type="email"]:focus { border-color: var(--primary); }
+.bl-waitlist input[type="email"]::placeholder { color: var(--mute); }
+.bl-waitlist .btn-primary { flex-shrink: 0; }
+.bl-waitlist-note {
+  font-family: var(--font-mono); font-size: var(--caption-size);
+  line-height: var(--caption-lh); color: var(--mute);
+  margin-top: var(--space-sm);
+}
+.bl-waitlist .success {
+  display: none; align-items: center; gap: 10px;
+  height: 48px; padding: 0 var(--space-md);
+  background: var(--canvas); border-radius: var(--rounded-pill);
+  box-shadow: var(--elev-2);
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink);
+}
+.bl-waitlist.joined form { display: none; }
+.bl-waitlist.joined .success { display: inline-flex; }
+.bl-waitlist .success .check { color: var(--success-deep); display: inline-flex; }
+
+/* ---------- Direction switcher (review chrome) ---------- */
+.bl-switcher {
+  position: fixed; left: 16px; bottom: 16px; z-index: 90;
+  display: flex; align-items: center; gap: 2px;
+  background: var(--canvas); border-radius: var(--rounded-pill);
+  box-shadow: var(--elev-5); padding: 4px;
+}
+.bl-switcher .lbl {
+  font-family: var(--font-mono); font-size: 11px; color: var(--mute);
+  padding: 0 8px 0 10px; font-variant-caps: all-small-caps; letter-spacing: 0.04em;
+}
+.bl-switcher a {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 28px; padding: 0 12px; border-radius: var(--rounded-pill);
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--body); text-decoration: none; white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.bl-switcher a:hover { background: var(--canvas-soft-2); color: var(--ink); }
+.bl-switcher a.active { background: var(--primary); color: var(--on-primary); }
+
+/* ---------- Footer ---------- */
+.bl-footer {
+  background: var(--canvas); padding: 64px 24px 48px;
+  border-top: 1px solid var(--hairline);
+}
+.bl-footer-inner { max-width: 1200px; margin: 0 auto; }
+.bl-footer-grid {
+  display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px;
+}
+.bl-footer-tagline {
+  font-size: 14px; line-height: 20px; color: var(--body);
+  letter-spacing: -0.28px; margin: 12px 0 0; max-width: 280px;
+}
+.bl-footer-col { display: flex; flex-direction: column; gap: 8px; }
+.bl-footer-col a {
+  font-size: 14px; color: var(--body); text-decoration: none;
+  letter-spacing: -0.28px;
+}
+.bl-footer-col a:hover { color: var(--ink); }
+.bl-footer-bottom {
+  border-top: 1px solid var(--hairline); margin-top: 48px; padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.bl-footer-bottom span {
+  font-family: var(--font-mono); font-size: 12px; color: var(--mute);
+}
+
+/* ---------- Eyebrow ---------- */
+.eyebrow {
+  font-family: var(--font-mono); font-size: var(--caption-size);
+  line-height: var(--caption-lh); color: var(--body);
+  font-variant-caps: all-small-caps; letter-spacing: 0.04em;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(16px); }
+.reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity 500ms var(--ease), transform 500ms var(--ease);
+}
+html[data-motion="off"] .reveal,
+html[data-motion="off"] .reveal.in { opacity: 1; transform: none; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Tweaks mount ---------- */
+#tweaks-root { position: relative; z-index: 100; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .bl-nav-links { display: none; }
+  .bl-footer-grid { grid-template-columns: 1fr 1fr; }
+  .bl-waitlist form { flex-direction: column; }
+  .bl-waitlist .btn-primary { width: 100%; }
+}

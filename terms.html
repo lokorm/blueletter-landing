@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlueLetter — Terms of Service</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --canvas: #ffffff;
+    --ink: #171717;
+    --body: #4d4d4d;
+    --mute: #888888;
+    --line: #ebebeb;
+    --link: #0070f3;
+    --link-deep: #0761d1;
+    --warn-bg: #fff8e6;
+    --warn-line: #f5a623;
+    --warn-ink: #5a3d00;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0a0a0a; --canvas: #111111; --ink: #fafafa; --body: #a1a1a1; --mute: #666; --line: #262626; --link: #5aa3ff; --link-deep: #b3d4ff; --warn-bg: #2a2106; --warn-line: #f5a623; --warn-ink: #ffd98a; }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 96px; }
+  header { padding-bottom: 32px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+  .eyebrow { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mute); margin-bottom: 8px; }
+  h1 { font-size: 34px; font-weight: 600; letter-spacing: -1px; margin: 0; line-height: 1.15; color: var(--ink); }
+  h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; margin-top: 40px; margin-bottom: 12px; color: var(--ink); }
+  h3 { font-size: 16px; font-weight: 600; margin-top: 22px; margin-bottom: 8px; color: var(--ink); }
+  p, ul, ol { color: var(--body); margin: 0 0 14px 0; }
+  ul, ol { padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; color: var(--link-deep); }
+  .meta { color: var(--mute); font-size: 13px; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .callout { background: var(--canvas); border-left: 3px solid var(--link); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+  .warn { background: var(--warn-bg); border-left: 3px solid var(--warn-line); color: var(--warn-ink); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+  .warn strong { color: var(--warn-ink); }
+  .toc { background: var(--canvas); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; margin: 24px 0 40px; }
+  .toc ol { padding-left: 24px; margin: 0; }
+  .toc li { margin-bottom: 4px; color: var(--body); }
+  .toc a { color: var(--body); }
+  .toc a:hover { color: var(--ink); text-decoration: underline; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--mute); font-size: 13px; }
+  footer a { color: var(--mute); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">BlueLetter</div>
+  <h1>Terms of Service</h1>
+  <p class="meta">Effective date: 22 May 2026 · Last updated: 22 May 2026</p>
+</header>
+
+<p>These Terms of Service (the "<strong>Terms</strong>") govern your use of the BlueLetter mobile application and any related services ("<strong>BlueLetter</strong>," "the app," "the service"). BlueLetter is operated by Marco Santini, an individual operator established in the Netherlands ("we," "us," "the operator").</p>
+
+<p>By installing, accessing, or using BlueLetter you confirm that you have read, understood, and agreed to these Terms. If you do not agree, do not install or use the app.</p>
+
+<div class="warn">
+  <strong>Please read sections 6, 8, 17, and 18 carefully.</strong> They describe critical limitations on what BlueLetter does, how AI-generated output should be used, and the extent of our liability. These limitations directly affect your rights.
+</div>
+
+<div class="toc">
+  <div class="eyebrow" style="margin-bottom: 10px;">Contents</div>
+  <ol>
+    <li><a href="#s1">What BlueLetter is</a></li>
+    <li><a href="#s2">Who can use it</a></li>
+    <li><a href="#s3">Your account</a></li>
+    <li><a href="#s4">Subscriptions and billing</a></li>
+    <li><a href="#s5">Right of withdrawal (EU consumers)</a></li>
+    <li><a href="#s6">AI translation — scope and limitations</a></li>
+    <li><a href="#s7">Third-party services that process your data</a></li>
+    <li><a href="#s8">Not professional advice</a></li>
+    <li><a href="#s9">Your obligation to verify before acting</a></li>
+    <li><a href="#s10">Acceptable use</a></li>
+    <li><a href="#s11">Your content; intellectual property</a></li>
+    <li><a href="#s12">Privacy and data protection</a></li>
+    <li><a href="#s13">Service availability; force majeure</a></li>
+    <li><a href="#s14">Disclaimers of warranties</a></li>
+    <li><a href="#s15">Termination and suspension</a></li>
+    <li><a href="#s16">Changes to these Terms</a></li>
+    <li><a href="#s17">Limitation of liability</a></li>
+    <li><a href="#s18">Indemnification</a></li>
+    <li><a href="#s19">Governing law and disputes</a></li>
+    <li><a href="#s20">General</a></li>
+    <li><a href="#s21">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">1. What BlueLetter is</h2>
+
+<p>BlueLetter is a mobile <strong>translation aid</strong>. You take a photo of a Dutch government letter using your device camera or upload an existing image; BlueLetter sends the image to a large-language-model AI provider, and returns:</p>
+
+<ul>
+  <li>a translation of the letter into a language you choose;</li>
+  <li>a plain-language summary of the letter's content;</li>
+  <li>a list of dates, deadlines, and amounts the AI identified;</li>
+  <li>optionally, the ability to add the deadlines to your device calendar and set local push reminders (paid tiers only).</li>
+</ul>
+
+<p>BlueLetter is a convenience tool. It is <strong>not</strong> an official translation service, a notarised translation, a sworn translator, a tax advisor, an immigration advisor, a lawyer, an accountant, a financial advisor, a debt-collection agent, or a government authority.</p>
+
+<h2 id="s2">2. Who can use it</h2>
+
+<p>You may use BlueLetter only if you are at least 17 years old, have the legal capacity to enter into a binding contract under the laws of your country of residence, and are not prohibited from using digital services under any applicable export, sanctions, or other law.</p>
+
+<p>If you are using BlueLetter on behalf of another person (for example helping a parent or partner read their post), you confirm that you have their permission to scan and process letters addressed to them, and that they have read and accepted these Terms.</p>
+
+<h2 id="s3">3. Your account</h2>
+
+<p>Some features of BlueLetter may require an account. You are responsible for the accuracy of the information you provide and for keeping your credentials confidential. You are responsible for all activity carried out under your account. Notify us at <a href="mailto:support@tryblueletter.com">support@tryblueletter.com</a> if you suspect unauthorised use.</p>
+
+<h2 id="s4">4. Subscriptions and billing</h2>
+
+<p>BlueLetter offers three tiers:</p>
+
+<ul>
+  <li><strong>Free</strong> — 2 letter scans per calendar month, up to 3 pages per letter, 90 days of letter history accessible in-app. Calendar adds and push reminders are not available on the free tier.</li>
+  <li><strong>Standard</strong> — 20 letter scans per calendar month, unlimited pages per letter, unlimited history, calendar adds and push reminders enabled.</li>
+  <li><strong>Pro</strong> — 60 letter scans per calendar month, unlimited pages per letter, unlimited history, calendar adds and push reminders enabled, Apple Family Sharing, document export (PDF).</li>
+</ul>
+
+<p>Standard and Pro are sold as <strong>auto-renewing subscriptions</strong> with monthly or annual billing cycles. Subscriptions are sold and billed by Apple through the Apple App Store. Apple is the merchant of record. Apple is responsible for handling payment, refunds, taxes, and subscription management. Apple's terms apply to the payment relationship: <a href="https://www.apple.com/legal/internet-services/itunes/">https://www.apple.com/legal/internet-services/itunes/</a>.</p>
+
+<p>Subscriptions renew automatically at the end of each billing period unless you cancel at least 24 hours before the renewal date via your Apple ID subscription settings. Prices and features may change with notice as described in section 16.</p>
+
+<p>Tax (VAT) is included where it applies. Apple handles VAT collection and remittance.</p>
+
+<h2 id="s5">5. Right of withdrawal (EU consumers)</h2>
+
+<p>If you are a consumer resident in the European Union, the United Kingdom, or another jurisdiction that grants you a statutory right of withdrawal for digital services, you have the right to withdraw from a subscription contract within fourteen (14) days of purchase, without giving any reason.</p>
+
+<p>However, by purchasing a subscription and starting to use BlueLetter's paid features within the withdrawal period, <strong>you expressly request that we begin providing the service immediately and acknowledge that you lose your right of withdrawal once the service has been fully performed</strong>, as permitted under Article 16 of EU Directive 2011/83/EU. Each individual letter scan and AI translation is considered a fully performed service for this purpose.</p>
+
+<p>If you wish to withdraw from a subscription within the 14-day window and have not used any paid features, you must request a refund through Apple's standard refund flow: <a href="https://reportaproblem.apple.com">https://reportaproblem.apple.com</a>. We are unable to issue refunds directly because we do not process your payment.</p>
+
+<h2 id="s6">6. AI translation — scope and limitations</h2>
+
+<p>BlueLetter uses third-party large-language-model AI to read and interpret the images you upload. The model used at the time of writing is <strong>Anthropic Claude</strong>, accessed through the Anthropic API. The model used may change over time without notice to you.</p>
+
+<div class="warn">
+  <strong>AI output is probabilistic and can be wrong.</strong> The translation, summary, and extracted deadlines that BlueLetter returns may be:
+  <ul>
+    <li>incomplete (omitting important information);</li>
+    <li>incorrect (mistranslating, misclassifying, or hallucinating content);</li>
+    <li>partially correct but misleading in context;</li>
+    <li>outdated (a translation may not reflect later government correspondence, changes to your file, or updates to Dutch law);</li>
+    <li>unable to read poor-quality, partially-cropped, glare-affected, or handwritten content.</li>
+  </ul>
+  <strong>You must not rely on BlueLetter as the sole basis for any decision with financial, legal, immigration, residence, tax, employment, healthcare, or other significant consequences.</strong>
+</div>
+
+<p>Specifically and without limitation, BlueLetter does not:</p>
+
+<ul>
+  <li>guarantee the accuracy, completeness, or fitness for any particular purpose of any translation or summary;</li>
+  <li>guarantee that deadlines extracted by the AI are correctly identified or correctly dated;</li>
+  <li>guarantee that the sender shown in the app is the actual sender of the letter (sender detection is heuristic);</li>
+  <li>verify the authenticity of any letter — BlueLetter cannot tell you whether a letter is real, fraudulent, or a phishing attempt;</li>
+  <li>continuously monitor your case, your status, or any changes to your file with a Dutch authority;</li>
+  <li>send, file, or respond to correspondence on your behalf;</li>
+  <li>act as a courier, mailbox, or document storage service of record.</li>
+</ul>
+
+<h2 id="s7">7. Third-party services that process your data</h2>
+
+<p>To deliver the service, BlueLetter shares letter-image data with the following providers:</p>
+
+<ul>
+  <li><strong>Anthropic, PBC</strong> — receives your letter image(s) and the target language for translation. Anthropic processes the data under its own terms and privacy policy. We have a Data Processing Agreement in place under Anthropic's standard terms.</li>
+  <li><strong>Vercel Inc.</strong> — hosts our backend infrastructure. Your image data transits through Vercel's serverless functions briefly during processing and is not retained.</li>
+  <li><strong>Apple Inc.</strong> — provides the App Store, subscription billing, push notifications (if you enable them), and calendar integration (if you grant access).</li>
+</ul>
+
+<p>For full details of how your data is processed, see our <a href="/privacy.html">Privacy Policy</a>. We do not sell your personal data and do not use letter content to train AI models.</p>
+
+<h2 id="s8">8. Not professional advice</h2>
+
+<div class="warn">
+  <strong>BlueLetter does not provide professional advice of any kind.</strong> Translations and summaries produced by BlueLetter are <strong>not</strong>:
+  <ul>
+    <li>tax advice or accounting advice;</li>
+    <li>legal advice of any kind, including immigration or residence-permit advice;</li>
+    <li>financial or investment advice;</li>
+    <li>medical advice or insurance advice;</li>
+    <li>employment or labour-law advice;</li>
+    <li>debt or collection advice;</li>
+    <li>certified, sworn, or notarised translations;</li>
+    <li>a substitute for reading the original Dutch text.</li>
+  </ul>
+</div>
+
+<p>For matters concerning Dutch government correspondence — and in particular letters from <em>Belastingdienst</em>, <em>IND</em>, <em>DUO</em>, <em>CJIB</em>, <em>UWV</em>, <em>Gemeente</em>, <em>KvK</em>, courts, debt-collection agencies, or insurers — you should consult a qualified professional (such as a registered tax advisor, immigration lawyer, civil-law notary, or social-services advisor) before taking any action that could affect your finances, residence status, legal standing, or rights.</p>
+
+<h2 id="s9">9. Your obligation to verify before acting</h2>
+
+<p>By using BlueLetter you accept that you have an independent obligation to:</p>
+
+<ol>
+  <li>Read the original Dutch text of the letter and verify that any translation produced by BlueLetter is consistent with it.</li>
+  <li>Identify any payment account numbers, reference numbers ("kenmerk," "betalingskenmerk"), deadlines, or other action items directly from the original letter — not from the BlueLetter summary alone.</li>
+  <li>Consult a qualified professional before taking any action whose consequences are material to you.</li>
+  <li>Treat the BlueLetter output as a starting point for understanding, not as the basis for action.</li>
+</ol>
+
+<p>If you act on a BlueLetter translation or summary without independently verifying the original Dutch text, you do so at your sole risk.</p>
+
+<h2 id="s10">10. Acceptable use</h2>
+
+<p>You agree not to:</p>
+<ul>
+  <li>scan, upload, or process letters or documents you do not have the right to process, including letters addressed to other people without their explicit permission;</li>
+  <li>use BlueLetter for any illegal purpose, or in violation of any law, regulation, or court order;</li>
+  <li>use BlueLetter to harass, harm, defraud, impersonate, or threaten any person;</li>
+  <li>upload material that contains malware, attempts to inject content, or attempts to manipulate the AI provider's behaviour through prompt injection or similar techniques;</li>
+  <li>reverse-engineer, decompile, disassemble, or attempt to derive the source code of the app, except to the extent permitted by mandatory law (in particular Article 6 of the EU Software Directive 2009/24/EC for interoperability purposes);</li>
+  <li>attempt to overload, disrupt, or gain unauthorised access to our infrastructure, backend, accounts, or that of any third-party service we depend on;</li>
+  <li>resell, sublicense, rent, lease, or otherwise commercialise BlueLetter or any AI output without our prior written consent;</li>
+  <li>use BlueLetter to provide a competing translation service to third parties.</li>
+</ul>
+
+<p>We may suspend or terminate your access if you breach this section.</p>
+
+<h2 id="s11">11. Your content; intellectual property</h2>
+
+<p><strong>BlueLetter, its design, branding, code, and content</strong> are owned by Marco Santini and protected by applicable intellectual-property law. We grant you a limited, revocable, non-exclusive, non-transferable, non-sublicensable licence to install and use BlueLetter on a device you own or control, for personal and non-commercial purposes only.</p>
+
+<p><strong>The letters you scan</strong> remain yours. We do not claim any ownership of the content of your letters or of the translations and summaries we produce for you. You grant us a limited licence to process your letter content as necessary to provide the service (including sending it to the AI provider).</p>
+
+<p>We may use aggregated, anonymised technical data — such as scan counts and error rates — to improve the service.</p>
+
+<h2 id="s12">12. Privacy and data protection</h2>
+
+<p>Our handling of your personal data is described in our <a href="/privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. We process personal data in accordance with the EU General Data Protection Regulation (GDPR) and the Dutch <em>Uitvoeringswet AVG</em>. By using BlueLetter you confirm that you have read and understood our privacy practices.</p>
+
+<h2 id="s13">13. Service availability; force majeure</h2>
+
+<p>We aim to keep BlueLetter available continuously but we do not guarantee uninterrupted service. The app depends on third-party services — including but not limited to the Anthropic API, Vercel, Apple App Store services, Apple Push Notification Service, and your device's calendar and notification subsystems — whose availability is outside our direct control.</p>
+
+<p>We may also temporarily suspend the service for maintenance, security, capacity, or upgrade reasons. We will use reasonable efforts to schedule planned downtime outside peak hours but cannot always do so.</p>
+
+<p>We are not liable for any failure or delay in performance caused by events beyond our reasonable control, including acts of God, natural disasters, war, terrorism, civil unrest, cyber-attacks, internet or telecommunications failures, third-party service outages, governmental action, public-health emergencies, or labour disruptions.</p>
+
+<h2 id="s14">14. Disclaimers of warranties</h2>
+
+<p>To the maximum extent permitted by applicable law:</p>
+
+<ul>
+  <li>BlueLetter is provided on an <strong>"as is" and "as available"</strong> basis;</li>
+  <li>we make <strong>no warranty, express or implied</strong>, including without limitation warranties of merchantability, fitness for a particular purpose, accuracy, completeness, non-infringement, or quiet enjoyment;</li>
+  <li>we do not warrant that the service will be uninterrupted, secure, error-free, or free from viruses or other harmful code;</li>
+  <li>we do not warrant that AI-generated output will be accurate, complete, current, reliable, or fit for any particular purpose;</li>
+  <li>any reliance you place on AI output is at your sole risk.</li>
+</ul>
+
+<p>Nothing in this section excludes warranties that cannot be excluded under applicable consumer-protection law.</p>
+
+<h2 id="s15">15. Termination and suspension</h2>
+
+<p>You may stop using BlueLetter and cancel any subscription at any time through your Apple ID settings.</p>
+
+<p>We may suspend or terminate your access if (a) you breach these Terms, (b) we are required to do so by law or court order, (c) a third-party service we depend on terminates its relationship with us, (d) the operator ceases to operate BlueLetter as a business. We will give you reasonable notice where practical.</p>
+
+<p>Sections 6, 8, 9, 11, 12, 14, 17, 18, 19, and 20 survive termination of these Terms.</p>
+
+<h2 id="s16">16. Changes to these Terms</h2>
+
+<p>We may update these Terms from time to time. When we make a material change, we will:</p>
+
+<ul>
+  <li>update the "Last updated" date at the top of this page;</li>
+  <li>provide at least <strong>thirty (30) days' notice</strong> before the change takes effect, either via in-app notice, push notification, or email (where you have provided one);</li>
+  <li>where the change reduces your rights, ask you to re-confirm acceptance inside the app.</li>
+</ul>
+
+<p>Non-material changes (typographical corrections, clarifications, new feature descriptions that do not affect your rights) may take effect immediately. Continued use of BlueLetter after the effective date of a change constitutes acceptance of the updated Terms.</p>
+
+<h2 id="s17">17. Limitation of liability</h2>
+
+<div class="warn">
+  <strong>This section limits our liability. Please read it carefully. Your statutory rights as a consumer are not affected.</strong>
+</div>
+
+<p>To the maximum extent permitted by applicable law:</p>
+
+<h3>17.1 Excluded damages</h3>
+
+<p>We are <strong>not liable</strong> for:</p>
+
+<ul>
+  <li>fines, penalties, interest, late fees, or other amounts charged to you by any government, authority, court, debt collector, employer, school, landlord, insurer, or other third party;</li>
+  <li>missed deadlines, lost rights, lost residence permits, refused visa applications, denial of benefits, or other adverse outcomes of administrative or judicial procedures;</li>
+  <li>loss of profits, loss of revenue, loss of business, loss of goodwill, loss of data, loss of use, or loss of opportunity;</li>
+  <li>any indirect, incidental, special, consequential, punitive, or exemplary damages;</li>
+  <li>damages resulting from your failure to verify a translation or summary against the original Dutch text;</li>
+  <li>damages resulting from your reliance on BlueLetter as professional advice;</li>
+  <li>damages resulting from third-party service outages, errors, or breaches;</li>
+  <li>damages resulting from fraudulent or phishing letters that you scanned with BlueLetter;</li>
+  <li>damages resulting from your failure to act on a translation, summary, or deadline that BlueLetter correctly identified.</li>
+</ul>
+
+<h3>17.2 Cap on liability</h3>
+
+<p>Our total cumulative liability to you for any direct damages arising out of or in connection with BlueLetter is limited to the <strong>greater of</strong>: (a) the total amount you paid to us through your subscription in the twelve (12) months preceding the event giving rise to the claim, or (b) <strong>one hundred euro (€100)</strong>.</p>
+
+<h3>17.3 Mandatory rights preserved</h3>
+
+<p>Nothing in these Terms limits or excludes any liability that cannot lawfully be limited or excluded, including without limitation liability for: (a) personal injury or death caused by our negligence, (b) fraud or fraudulent misrepresentation, (c) intentional misconduct or gross negligence, (d) any other liability that cannot be excluded under mandatory consumer-protection law in your country of residence.</p>
+
+<p>If you are a consumer resident in the European Union, your statutory rights under Directive 1999/44/EC, Directive 2011/83/EU, the Dutch Civil Code (Burgerlijk Wetboek), and the GDPR are not affected by these Terms.</p>
+
+<h2 id="s18">18. Indemnification</h2>
+
+<p>You agree to indemnify, defend, and hold harmless Marco Santini, BlueLetter, and any of our affiliates, contractors, employees, or service providers, from and against any third-party claims, demands, losses, liabilities, damages, costs, and expenses (including reasonable legal fees) arising out of or related to:</p>
+
+<ul>
+  <li>your use or misuse of BlueLetter;</li>
+  <li>your breach of these Terms or any law;</li>
+  <li>your processing of a letter that you did not have the right to process, including letters addressed to other people;</li>
+  <li>any claim by a third party that you acted (or failed to act) on the basis of a BlueLetter translation;</li>
+  <li>any infringement of intellectual-property, privacy, or other rights through your use of BlueLetter.</li>
+</ul>
+
+<p>This indemnification obligation survives termination of these Terms. It does not apply to the extent the claim arises out of our own intentional misconduct or gross negligence.</p>
+
+<h2 id="s19">19. Governing law and disputes</h2>
+
+<p>These Terms are governed by the law of <strong>the Netherlands</strong>, excluding its conflict-of-law rules and excluding the United Nations Convention on Contracts for the International Sale of Goods.</p>
+
+<p>Any dispute arising out of or in connection with these Terms or your use of BlueLetter will be subject to the exclusive jurisdiction of the competent courts of <strong>Amsterdam, the Netherlands</strong>.</p>
+
+<p>If you are a consumer resident in the European Union, this clause does not deprive you of the protection afforded to you by mandatory provisions of the law of your country of residence, and you may bring proceedings before the courts of your country of residence to the extent permitted by law.</p>
+
+<p>The European Commission provides an Online Dispute Resolution platform for consumer disputes: <a href="https://ec.europa.eu/consumers/odr/">https://ec.europa.eu/consumers/odr/</a>. We are not required to and do not commit to participating in alternative dispute resolution.</p>
+
+<h2 id="s20">20. General</h2>
+
+<h3>20.1 Severability</h3>
+
+<p>If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court or authority of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it enforceable, or, if it cannot be so modified, struck from these Terms. The remaining provisions shall continue in full force and effect.</p>
+
+<h3>20.2 No waiver</h3>
+
+<p>Our failure to enforce any right or provision of these Terms shall not be deemed a waiver of that right or provision. A waiver of any breach shall not be deemed a waiver of any subsequent breach.</p>
+
+<h3>20.3 Entire agreement</h3>
+
+<p>These Terms, together with our <a href="/privacy.html">Privacy Policy</a> and any feature-specific notices presented inside the app, constitute the entire agreement between you and us regarding BlueLetter and supersede any prior agreement or understanding.</p>
+
+<h3>20.4 Assignment</h3>
+
+<p>You may not assign or transfer your rights or obligations under these Terms without our prior written consent. We may assign or transfer our rights and obligations under these Terms in connection with a corporate restructuring, sale of business, or similar transaction, provided that any successor undertakes to honour these Terms.</p>
+
+<h3>20.5 Language</h3>
+
+<p>These Terms are drafted in English. Translations may be provided for convenience; in case of conflict, the English version prevails.</p>
+
+<h2 id="s21">21. Contact</h2>
+
+<p>For questions about these Terms or to exercise any right you have under them, contact us at <a href="mailto:support@tryblueletter.com">support@tryblueletter.com</a>.</p>
+
+<footer>
+  <p>BlueLetter · operated by Marco Santini · <a href="/privacy.html">Privacy Policy</a></p>
+</footer>
+
+</div>
+</body>
+</html>
