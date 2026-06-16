@@ -120,25 +120,33 @@
   <tbody>
     <tr><td><strong>Anthropic</strong> (Claude AI)</td><td>Extracts text from your letter photos and produces the translation, summary, and deadlines.</td><td>United States</td></tr>
     <tr><td><strong>Vercel</strong></td><td>Hosts the backend service that forwards requests to Anthropic.</td><td>United States (with EU edge locations)</td></tr>
-    <tr><td><strong>Apple</strong></td><td>Distributes the app, handles in-app purchases, and provides push notification and calendar APIs.</td><td>Ireland / United States</td></tr>
+    <tr><td><strong>Supabase</strong></td><td>Account authentication and cloud storage/sync of your letters and deadlines across your devices. Your letter <em>photos</em> are never uploaded — they stay on your device.</td><td>European Union (Frankfurt, Germany)</td></tr>
+    <tr><td><strong>RevenueCat</strong></td><td>Manages and verifies in-app subscription purchases and entitlements.</td><td>United States</td></tr>
+    <tr><td><strong>Apple</strong></td><td>Distributes the app, processes in-app purchases, and provides push notification and calendar APIs.</td><td>Ireland / United States</td></tr>
+    <tr><td><strong>Resend</strong></td><td>Sends transactional account emails (sign-up confirmation, password reset).</td><td>United States / European Union</td></tr>
+    <tr><td><strong>Sentry</strong></td><td>Crash and error diagnostics. Configured to exclude request bodies, screenshots, and personal identifiers.</td><td>European Union (Frankfurt, Germany)</td></tr>
+    <tr><td><strong>PostHog</strong></td><td>Anonymous product-usage analytics (e.g. "a scan completed"). Receives no personal identifiers, no account email, and no letter content.</td><td>European Union</td></tr>
   </tbody>
 </table>
 
-<p>We do not share data with advertising networks, analytics providers, data brokers, or any other third parties beyond the three listed above.</p>
+<p>We do not share data with advertising networks or data brokers, and we do not sell your data. Beyond the processors listed above, no third party receives your data. Our analytics (PostHog) and diagnostics (Sentry) are EU-hosted and receive only anonymous, non-identifying information — see section 11.</p>
 
 <div class="callout">
   <strong>We do not sell your personal data. We do not allow our service providers to use your letter content to train AI models.</strong> Anthropic's commercial API terms (under which we operate) explicitly exclude API inputs and outputs from training data unless the customer opts in — we have not opted in.
 </div>
 
 <h2>5. International transfers</h2>
-<p>Anthropic and Vercel are based in the United States. When your data is sent to them, it leaves the European Union. Transfers are covered by the <strong>Standard Contractual Clauses (SCCs)</strong> as adopted by the European Commission, included in each provider's standard Data Processing Agreement.</p>
+<p>Your account data and letters are stored in the <strong>European Union</strong> (Supabase, Frankfurt). Our analytics (PostHog) and crash diagnostics (Sentry) are also EU-hosted. This data does not leave the EU.</p>
+<p>Some processors are based in the United States: <strong>Anthropic</strong> and <strong>Vercel</strong> (which process your letter photos in transit during a scan), <strong>RevenueCat</strong> (subscription management), and <strong>Resend</strong> (account emails). When data is sent to them it leaves the European Union; these transfers are covered by the <strong>Standard Contractual Clauses (SCCs)</strong> adopted by the European Commission, included in each provider's standard Data Processing Agreement.</p>
 
 <h2>6. How long we keep data</h2>
 <table>
   <thead><tr><th>Data</th><th>Where</th><th>Retention</th></tr></thead>
   <tbody>
-    <tr><td>Letter photos and extracted content</td><td>Your device</td><td>Until you delete the letter or uninstall the app.</td></tr>
+    <tr><td>Letter photos</td><td>Your device only</td><td>Until you delete the letter or uninstall the app. Never uploaded to our cloud.</td></tr>
+    <tr><td>Letter text, summary &amp; deadlines</td><td>Your device + Supabase (EU)</td><td>Until you delete the letter or your account.</td></tr>
     <tr><td>Letter photos transit</td><td>Anthropic / Vercel</td><td>Anthropic retains inputs for up to 30 days for trust &amp; safety review, then deletes them. Vercel does not persist them at all.</td></tr>
+    <tr><td>Anonymous analytics &amp; crash reports</td><td>PostHog / Sentry (EU)</td><td>Per provider defaults; no personal identifiers attached.</td></tr>
     <tr><td>Onboarding answers</td><td>Your device</td><td>Until you reset onboarding or uninstall the app.</td></tr>
     <tr><td>Subscription information</td><td>Apple</td><td>Governed by Apple.</td></tr>
     <tr><td>Technical logs</td><td>Vercel</td><td>~30 days, then automatically rotated out.</td></tr>
@@ -150,7 +158,7 @@
 <ul>
   <li><strong>Right of access (Art. 15)</strong> — request a copy of the personal data we hold about you.</li>
   <li><strong>Right to rectification (Art. 16)</strong> — ask us to correct inaccurate or incomplete data. Note that AI-generated translations and summaries are best-effort; you can correct the urgency of a letter directly in the app.</li>
-  <li><strong>Right to erasure (Art. 17)</strong> — delete a single letter inside the app, or uninstall the app to remove all locally stored data. We do not persist your letter data on our backend.</li>
+  <li><strong>Right to erasure (Art. 17)</strong> — delete a single letter inside the app (removed from your device and from our Supabase cloud copy), or use "Delete account" to erase your account and all associated letters and deadlines. Your letter <em>photos</em> are only ever stored on your device.</li>
   <li><strong>Right to restriction (Art. 18)</strong> — ask us to limit processing in specific circumstances.</li>
   <li><strong>Right to portability (Art. 20)</strong> — request your data in a structured, machine-readable format.</li>
   <li><strong>Right to object (Art. 21)</strong> — object to processing based on legitimate interest.</li>
@@ -174,17 +182,23 @@
 <ul>
   <li><strong>Encryption in transit:</strong> all network traffic between your device, our backend, and Anthropic uses TLS 1.2 or higher.</li>
   <li><strong>Encryption at rest:</strong> data stored on your device is protected by iOS file-level encryption tied to your device passcode. Anthropic and Vercel encrypt data at rest in their infrastructure under their standard security programmes.</li>
-  <li><strong>Access control:</strong> our backend rejects requests without the correct API key. Internal access to our infrastructure is limited to the operator.</li>
-  <li><strong>Data minimisation:</strong> we collect only what we need, downscale images before transmission, and process most data on-device.</li>
-  <li><strong>No persistent storage on our backend:</strong> your letter images are processed in memory by a Vercel serverless function and are not written to our disks or databases.</li>
+  <li><strong>Access control:</strong> our backend authenticates every request with a per-user signed token (JWT), and our database enforces row-level security so you can only ever access your own data. Internal access to our infrastructure is limited to the operator.</li>
+  <li><strong>Data minimisation:</strong> we collect only what we need, downscale images before transmission, and keep your letter photos on-device only.</li>
+  <li><strong>Letter photos never leave your device:</strong> images are processed in memory by a Vercel serverless function during a scan and are never written to our disks or databases. The resulting text, summary, and deadlines are stored in our EU database (Supabase) so they sync across your devices; the photos are not.</li>
 </ul>
 <p>In the unlikely event of a personal data breach affecting your rights and freedoms, we will notify the Dutch Data Protection Authority within 72 hours of becoming aware of it and, where required, notify you directly.</p>
 
 <h2>10. Children</h2>
 <p>BlueLetter is not directed at children under 17 years of age. We do not knowingly collect personal data from anyone under 17. If we learn that we have inadvertently collected personal data from a person under 17, we will delete that data without undue delay. Parents and guardians who believe their child has used BlueLetter without consent can contact <a href="mailto:privacy@tryblueletter.com">privacy@tryblueletter.com</a>.</p>
 
-<h2>11. Cookies and tracking</h2>
-<p>BlueLetter is a native iOS app and does not use cookies or web tracking technologies. The app contains no advertising and no analytics SDKs.</p>
+<h2>11. Analytics, diagnostics, and tracking</h2>
+<p>BlueLetter is a native iOS app and uses no cookies, no web tracking, no advertising, and no cross-app tracking. We do not use Apple's advertising identifier (IDFA) and do not ask for tracking permission.</p>
+<p>We do use two privacy-preserving, EU-hosted services to keep the app working and improve it:</p>
+<ul>
+  <li><strong>Anonymous usage analytics (PostHog, EU).</strong> We record anonymous product events — for example that a scan completed, a paywall was shown, or onboarding finished — tied only to a random device-level identifier. We do <strong>not</strong> attach your email, name, or any letter content, and we do not build a personal profile of you. Legal basis: our legitimate interest (Art. 6(1)(f) GDPR) in understanding and improving the app. You can object at any time (section 7).</li>
+  <li><strong>Crash diagnostics (Sentry, EU).</strong> If the app crashes or hits an error, we receive a technical report (stack trace, device model, OS version) to fix it. It is configured to exclude screenshots, request bodies, and personal identifiers. Legal basis: legitimate interest in a stable, secure service.</li>
+</ul>
+<p>Both providers are hosted in the European Union, so this data does not leave the EU.</p>
 
 <h2>12. Changes to this policy</h2>
 <p>We may update this policy from time to time. When we make material changes, we will note the new effective date at the top of this page, provide at least <strong>thirty (30) days' notice</strong> via in-app notice or push notification, and where the change broadens the categories of data processed or the purposes of processing, ask you to re-consent inside the app. Continued use after the effective date constitutes acceptance of the updated policy.</p>
